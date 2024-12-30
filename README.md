@@ -50,7 +50,16 @@ It was dependency injection now it has multiple dependecy, It is Ecosystem
 (It has the EJB , Struts, Hibernate all of the in one framework )
 ~~~
 
-### Spring Boot
+### Spring Boot: 
+
+```
+On the top of the Spring the SpringBoot Works on it , 
+It will create the project which works on the first go, no need to do the much configuration.
+
+Spring Boot 3 works on the spring6.
+
+
+```
 
 ### Spring Docs 
 ~~~
@@ -64,5 +73,15 @@ https://docs.spring.io/spring-framework/reference/index.html
 -> IOC container will have the object and Spring will create 
 -> IOC is the principle
 
-2. Dependency Injection : to inject the cpu object of cpu class into the laptop class we need the dependecy injection to inject it into laptop class . both the obj are avl in the IOC container 
+2. Dependency Injection : to inject the cpu object of cpu class into the laptop class we need the dependecy injection to inject it into laptop class . both the obj are avl in the IOC container.
+~~~
+
+
+## Di Using the Spring Boot: 
+
+
+# DI in the Spring
+
+~~~
+ Any objects crerated by the spring is called the beans 
 ~~~
