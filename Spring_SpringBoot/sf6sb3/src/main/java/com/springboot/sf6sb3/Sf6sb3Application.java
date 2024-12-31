@@ -28,7 +28,7 @@ public class Sf6sb3Application {
 // When the DISpring is dependent on the other class object 
 
         // Laptop lap = context.getBean(Laptop.class);
-        // lap.compile();   // we are aable to use the complie in main bcz we have the container access using the bean
+        // lap.compile();   // we are able to use the complie in main bcz we have the container access using the bean
 
         
     }

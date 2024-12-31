@@ -1,0 +1,4 @@
+.env
+/.class*
+.idea
+.vscode
