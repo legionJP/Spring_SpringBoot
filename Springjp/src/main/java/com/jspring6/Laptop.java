@@ -6,7 +6,7 @@ public class Laptop
     }
     public void compile()
     {
-        System.out.println("Laptop compile");
+        System.out.println("compiling ");
 
     }
 }

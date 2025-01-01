@@ -8,6 +8,8 @@
 <!-- Bean defination -->
 
     <bean id="alien" class="com.jspring6.AlienSpring">
+    <property name="age" value="23"></property>   <!-- Value for the Premitive type for the obj use something else -->
+    <property name="lap" ref="lap1"></property>  <!-- Here we have to wire the obj as it is already created by bean , give the ref of bean id obj -->
     </bean>
 
 <!--    <bean id="alien" class="com.jspring6.AlienSpring" scope="prototype">-->
@@ -16,7 +18,7 @@
 <!-- Mentioning the bean for the Latop class to create the obj, if mentioned the two times for same class
      It will create the 2 time object for the class
 -->
-    <bean id = "lap" class="com.jspring6.Laptop">
+    <bean id="lap1" class="com.jspring6.Laptop">
     </bean>
 
 </beans>

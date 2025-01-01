@@ -28,17 +28,41 @@ public class App
 
         AlienSpring alienobj2 =  (AlienSpring) context.getBean("alien");
 
-        alienobj2.age = 21; // if the age obj is different then it will print the different age for the both obj
+        alienobj2.age = 21; 
+        // if the age obj is different then it will print the different age for the both obj
         System.out.println(alienobj2.age);
+
         AlienSpring alienobj1 =  (AlienSpring) context.getBean("alien"); 
         // it will only get the one object not the two
-        System.out.println(alienobj1.age); //same obj reference if bean is singleton diff if bean is prototype
+        System.out.println(alienobj1.age); 
+        //same obj reference if bean is singleton diff if bean is prototype
 
         //Laptop laptopobj2 = (Laptop) context.getBean("lap");
         // here got the reference of the obj fromm the container
         // get bean provide the obj from the container but type is Object so need to do typecasting into alienSpringclass
+        
         alienobj2.code();
         alienobj1.code();
+
+
+// Part 5. Setter Injection 
+
+        // alienobj1.setAge(22);  // if don't want to assign the value here , than can assign in the core AlienSpring.java
+        System.out.println(alienobj2.getAge());  // print 23 from the .xml
+
+    //2. or can  Inject the value in the spring.xml , Using the property 
+    // this is called the setter injection bcz we are calling the setter method to assign the value
+
+        
+// Part 6. Ref Attribute Injection: 
+// AlienSpring Class , creating the lap obj and getter setter 
+// spring.xml: using the ref attribute 
+// <property name="lap" ref="lap1"></property>  <!-- Here we have to wire the obj as it is already created by bean , give the ref of bean id obj -->
+
+
+
+
+
 
     }
 }
