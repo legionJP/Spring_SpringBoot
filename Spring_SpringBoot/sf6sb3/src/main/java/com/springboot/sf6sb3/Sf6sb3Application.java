@@ -19,7 +19,8 @@ public class Sf6sb3Application {
 
         ApplicationContext context = SpringApplication.run(Sf6sb3Application.class, args); // context 
 
-        DISpring objDiSpring = context.getBean(DISpring.class); //getting the obj as obj is called Bean
+        DISpring objDiSpring = context.getBean(DISpring.class); 
+        //getting the obj as obj is called Bean
         objDiSpring.code();
 
         // DISpring objDiSpring2 = context.getBean(DISpring.class);

@@ -16,7 +16,7 @@ public class App
 //        AlienSpring alienobj = new AlienSpring();
 //        alienobj.code();
 
-        //1. creating the obj with the help of Spring , Spring have the IOC Container
+       // 1. creating the obj with the help of Spring , Spring have the IOC Container
 
        //  ApplicationContext to use we have to add the dependencies or external packages using the spring
         // context in the pom.xml , can use from the maven web repository
@@ -30,7 +30,8 @@ public class App
 
         alienobj2.age = 21; // if the age obj is different then it will print the different age for the both obj
         System.out.println(alienobj2.age);
-        AlienSpring alienobj1 =  (AlienSpring) context.getBean("alien"); // it will only get the one object not the two
+        AlienSpring alienobj1 =  (AlienSpring) context.getBean("alien"); 
+        // it will only get the one object not the two
         System.out.println(alienobj1.age); //same obj reference if bean is singleton diff if bean is prototype
 
         //Laptop laptopobj2 = (Laptop) context.getBean("lap");

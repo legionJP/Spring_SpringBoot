@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- Bean defination -->
 
@@ -11,9 +12,10 @@
 
 <!--    <bean id="alien" class="com.jspring6.AlienSpring" scope="prototype">-->
 <!--    </bean>-->
-    <!-- Mentioning the bean for the Latop class to create the obj, if mentioned the two times for same class
+
+<!-- Mentioning the bean for the Latop class to create the obj, if mentioned the two times for same class
      It will create the 2 time object for the class
-     -->
+-->
     <bean id = "lap" class="com.jspring6.Laptop">
     </bean>
 
