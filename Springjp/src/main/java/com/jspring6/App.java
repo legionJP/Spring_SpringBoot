@@ -41,8 +41,10 @@ public class App
         // here got the reference of the obj fromm the container
         // get bean provide the obj from the container but type is Object so need to do typecasting into alienSpringclass
         
+        ConstructorInjection objiInjection =(ConstructorInjection) context.getBean("constinject");
         alienobj2.code();
         alienobj1.code();
+        objiInjection.code();
 
 
 // Part 5. Setter Injection 

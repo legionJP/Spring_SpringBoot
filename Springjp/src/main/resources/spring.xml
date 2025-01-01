@@ -21,4 +21,9 @@
     <bean id="lap1" class="com.jspring6.Laptop">
     </bean>
 
+    <bean id="constinject" class="com.jspring6.ConstructorInjection">
+    <constructor-arg value="25"/>
+    <constructor-arg ref="lap1" />
+    </bean>
+
 </beans>
