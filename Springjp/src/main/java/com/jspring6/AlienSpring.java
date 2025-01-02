@@ -9,8 +9,6 @@ public class AlienSpring {
     private Laptop lap;
 
 
-
-
     // constructor
     public AlienSpring() {
         System.out.println("AlienSpring obj created");

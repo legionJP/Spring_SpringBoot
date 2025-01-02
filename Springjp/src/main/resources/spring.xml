@@ -26,4 +26,10 @@
     <constructor-arg ref="lap1" />
     </bean>
 
+    <bean id="alienif" class="com.jspring6.AlienInterface">
+    </bean>
+    <bean id="com" class="com.jspring6.Computer> 
+    </bean>
+
+
 </beans>

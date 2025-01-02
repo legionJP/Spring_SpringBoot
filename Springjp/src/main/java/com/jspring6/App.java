@@ -42,9 +42,11 @@ public class App
         // get bean provide the obj from the container but type is Object so need to do typecasting into alienSpringclass
         
         ConstructorInjection objiInjection =(ConstructorInjection) context.getBean("constinject");
+        AlienInterface objAlienInterface = (AlienInterface) context.getBean("alienif");
         alienobj2.code();
         alienobj1.code();
         objiInjection.code();
+        objAlienInterface.coding();
 
 
 // Part 5. Setter Injection 
@@ -60,11 +62,6 @@ public class App
 // AlienSpring Class , creating the lap obj and getter setter 
 // spring.xml: using the ref attribute 
 // <property name="lap" ref="lap1"></property>  <!-- Here we have to wire the obj as it is already created by bean , give the ref of bean id obj -->
-
-
-
-
-
 
     }
 }
