@@ -1,11 +1,15 @@
 # Sping Framework 
 
+
 # Topics to be Explore in the Below Order:
 
 1. Spring Project Creation Using the maven 
 
 #### Spring XML Configuration 
 2. [Spring Bean XML Config ](pom.xml)
+
+#
+# Creating the Spring Project wiht XML config
 
 ### Object Creation in the Spring 
 
@@ -55,3 +59,6 @@
 
 13. [Creating the Inner Bean for the Particular Class ](src/main/java/com/jspring6/LazyInitBean.java)
 
+#
+
+# Creating the Spring Application Using "Java Based Config"
