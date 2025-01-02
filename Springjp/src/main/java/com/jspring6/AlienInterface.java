@@ -12,29 +12,34 @@ public class AlienInterface {
         System.out.println("AlienSpring obj created");
     }
 
-    // getter and seeter for the setter injection 
-    
+    public void coding() {
+        System.out.println("Alien Interface coding Now ");
+        com.compile();  
+        lap.compile();
+    }
+
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        System.out.println("Setter is called");
         this.age = age;
     }
 
-    public Computer getLap() {
+    public Computer getCom() {
         return com;
     }
 
-    public void setLap(Computer com) {
+    public void setCom(Computer com) {
         this.com = com;
     }
 
-    public void coding() {
-        System.out.println("AlienSpring coding Now ");
-        com.compile();  
-        lap.compile();
+    public Laptop getLap() {
+        return lap;
+    }
+
+    public void setLap(Laptop lap) {
+        this.lap = lap;
     }
 
   

@@ -26,10 +26,15 @@
     <constructor-arg ref="lap1" />
     </bean>
 
-    <bean id="alienif" class="com.jspring6.AlienInterface">
-    </bean>
-    <bean id="com" class="com.jspring6.Computer> 
-    </bean>
+<!-- Defining the computer bean of concrete class -->
+    <bean id="computer" class="com.jspring6.Desktop"> 
+    </bean>  
 
+<!-- Injecting the obj Computer Bean from the Desktopo as concrete class -->
+    <bean id="alienif" class="com.jspring6.AlienInterface">
+    <property name="com" ref="computer"></property> 
+    <property name="lap" ref="lap1"></property> 
+
+    </bean>
 
 </beans>
