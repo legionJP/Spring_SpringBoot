@@ -5,7 +5,7 @@ import java.beans.ConstructorProperties;
 public class ConstructorInjection {
     private int age1;
     private Laptop lap;
-    // thrid var
+    // third var
     private int age2;
     
     // default constructor 
@@ -80,11 +80,11 @@ public class ConstructorInjection {
 // we have to mention the index number 
 
  //     <constructor-arg  index="1" ref="lap1" />
-    //  <constructor-arg index="0" ref="lap1" />  // this is index of the contructor vars
+    //  <constructor-arg index="0" value="25" />  // this is index of the contructor vars
 
-    //2. Instead of the Index we can uuse the directly the name but have to follow the sequence
+    //2. Instead of the Index we can use the directly the name but have to follow the sequence
 
-  //   <constructor-arg name="age" value="25"/>
+  //        <constructor-arg name="age" value="25"/>
     //     <constructor-arg name="lap" ref="lap1" />
 
 // to slove the problem the sequnce in the name use the @ConstructorPropoerties annotation    
