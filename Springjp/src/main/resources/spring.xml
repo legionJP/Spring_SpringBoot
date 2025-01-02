@@ -26,6 +26,10 @@
     <constructor-arg ref="lap1" />
     </bean>
 
+<!-- 
+<bean id="lap" class="com.jspring6.Laptop">
+    </bean>  -->
+
 <!-- Defining the computer bean of concrete class -->
     <bean id="computer" class="com.jspring6.Desktop"> 
     </bean>  
@@ -37,4 +41,9 @@
 
     </bean>
 
+
+<!-- bean of the lazy init class  -->
+    <bean id="lazybean" class="com.jspring6.LazyInitBean" lazy-init="true">
+    </bean>
+    
 </beans>

@@ -37,3 +37,16 @@
 
 ### Autowiring Interface
 
+9. [Autowiring the Interface obj in the dependent class](src/main/java/com/jspring6/AlienInterface.java), [xml file](src/main/resources/spring.xml)
+
+### Primary Bean Type
+
+10. [primary Bean Type](src/main/java/com/jspring6/AlienInterface.java)
+
+### Lazy Initialization of Bean
+
+11. [Lazy bean init and eager bean ](src/main/java/com/jspring6/LazyInitBean.java)
+
+### getBean by Type
+
+12. []()

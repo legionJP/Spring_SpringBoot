@@ -43,6 +43,8 @@ public class App
         
         ConstructorInjection objiInjection =(ConstructorInjection) context.getBean("constinject");
         AlienInterface objAlienInterface = (AlienInterface) context.getBean("alienif");
+       // LazyInitBean objLazy = (LazyInitBean) context.getBean("lazybean"); // singleton and obj created for
+
         alienobj2.code();
         alienobj1.code();
         objiInjection.code();
