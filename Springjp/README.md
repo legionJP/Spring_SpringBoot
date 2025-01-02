@@ -49,4 +49,9 @@
 
 ### getBean by Type
 
-12. []()
+12. [getBean by the Class Type obj](src/main/java/com/jspring6/LazyInitBean.java)
+
+### Inner Bean
+
+13. [Creating the Inner Bean for the Particular Class ](src/main/java/com/jspring6/LazyInitBean.java)
+
