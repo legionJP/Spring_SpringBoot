@@ -1,7 +1,10 @@
 package com.jspring6;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.jspring6.javabasedconfig.AppConfig;
 
 /**
  * Hello world!
@@ -21,49 +24,60 @@ public class App
        //  ApplicationContext to use we have to add the dependencies or external packages using the spring
         // context in the pom.xml , can use from the maven web repository
         // the application context is superset of the bin factory
+//---------------------------------------------------------------------------------------------------------------------------
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        //ClassPathXmlApplicationContext("applicationContext.xml");
-        // So spring will create the obj for the class mentioned in the xml
+// 1. XML Based Config : 
 
-        AlienSpring alienobj2 =  (AlienSpring) context.getBean("alien");
+//         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+//         //ClassPathXmlApplicationContext("applicationContext.xml");
+//         // So spring will create the obj for the class mentioned in the xml
 
-        alienobj2.age = 21; 
-        // if the age obj is different then it will print the different age for the both obj
-        System.out.println(alienobj2.age);
+//         AlienSpring alienobj2 =  (AlienSpring) context.getBean("alien");
 
-        AlienSpring alienobj1 =  (AlienSpring) context.getBean("alien"); 
-        // it will only get the one object not the two
-        System.out.println(alienobj1.age); 
-        //same obj reference if bean is singleton diff if bean is prototype
+//         alienobj2.age = 21; 
+//         // if the age obj is different then it will print the different age for the both obj
+//         System.out.println(alienobj2.age);
 
-        //Laptop laptopobj2 = (Laptop) context.getBean("lap");
-        // here got the reference of the obj fromm the container
-        // get bean provide the obj from the container but type is Object so need to do typecasting into alienSpringclass
+//         AlienSpring alienobj1 =  (AlienSpring) context.getBean("alien"); 
+//         // it will only get the one object not the two
+//         System.out.println(alienobj1.age); 
+//         //same obj reference if bean is singleton diff if bean is prototype
+
+//         //Laptop laptopobj2 = (Laptop) context.getBean("lap");
+//         // here got the reference of the obj fromm the container
+//         // get bean provide the obj from the container but type is Object so need to do typecasting into alienSpringclass
         
-        ConstructorInjection objiInjection =(ConstructorInjection) context.getBean("constinject");
-        AlienInterface objAlienInterface = (AlienInterface) context.getBean("alienif");
-       // LazyInitBean objLazy = (LazyInitBean) context.getBean("lazybean"); // singleton and obj created for
+//         ConstructorInjection objiInjection =(ConstructorInjection) context.getBean("constinject");
+//         AlienInterface objAlienInterface = (AlienInterface) context.getBean("alienif");
+//        // LazyInitBean objLazy = (LazyInitBean) context.getBean("lazybean"); // singleton and obj created for
 
-        alienobj2.code();
-        alienobj1.code();
-        objiInjection.code();
-        objAlienInterface.coding();
+//         alienobj2.code();
+//         alienobj1.code();
+//         objiInjection.code();
+//         objAlienInterface.coding();
 
 
-// Part 5. Setter Injection 
+// // Part 5. Setter Injection 
 
-        // alienobj1.setAge(22);  // if don't want to assign the value here , than can assign in the core AlienSpring.java
-        System.out.println(alienobj2.getAge());  // print 23 from the .xml
+//         // alienobj1.setAge(22);  // if don't want to assign the value here , than can assign in the core AlienSpring.java
+//         System.out.println(alienobj2.getAge());  // print 23 from the .xml
 
-    //2. or can  Inject the value in the spring.xml , Using the property 
-    // this is called the setter injection bcz we are calling the setter method to assign the value
+//     //2. or can  Inject the value in the spring.xml , Using the property 
+//     // this is called the setter injection bcz we are calling the setter method to assign the value
 
         
-// Part 6. Ref Attribute Injection: 
-// AlienSpring Class , creating the lap obj and getter setter 
-// spring.xml: using the ref attribute 
-// <property name="lap" ref="lap1"></property>  <!-- Here we have to wire the obj as it is already created by bean , give the ref of bean id obj -->
+// // Part 6. Ref Attribute Injection: 
+// // AlienSpring Class , creating the lap obj and getter setter 
+// // spring.xml: using the ref attribute 
+// // <property name="lap" ref="lap1"></property>  <!-- Here we have to wire the obj as it is already created by bean , give the ref of bean id obj -->
+
+//---------------------------------------------------------------------------------------------------------------------------
+// 2. java Config Based Config : 
+
+        ApplicationContext context  = new AnnotationConfigApplicationContext(AppConfig.class);
+        ConfigDesktop dt = context.getBean(ConfigDesktop.class);
+        dt.compile();
+
 
     }
 }

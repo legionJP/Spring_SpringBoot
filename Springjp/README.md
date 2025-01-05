@@ -59,6 +59,7 @@
 
 13. [Creating the Inner Bean for the Particular Class ](src/main/java/com/jspring6/LazyInitBean.java)
 
+
 #
 
 # Creating the Spring Application Using "Java Based Config"
