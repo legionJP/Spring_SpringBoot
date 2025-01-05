@@ -82,4 +82,16 @@
 ### Stereotype annotation @Component 
 - To tell the Spring that the file is part of Spring project 
 
-5. [ @Component Stereotype annotation ](src/main/java/com/jspring6/StereoTypeAnnotation.java)
+5. [ @Component Stereotype annotation ](src/main/java/com/jspring6/StereoTypeAnnotation.java) 
+
+- Revisit topic to implement
+
+6. [Autowire ]()
+- implement?
+
+7. [Primary and Qualifier]()
+- implement?
+
+
+8. [Scope and Value Annotation]()
+- implement?
