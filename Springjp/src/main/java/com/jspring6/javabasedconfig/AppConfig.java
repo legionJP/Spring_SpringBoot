@@ -2,6 +2,7 @@ package com.jspring6.javabasedconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.jspring6.ConfigDesktop;
 
@@ -9,6 +10,7 @@ import com.jspring6.ConfigDesktop;
 public class AppConfig {
     
     @Bean
+    @Scope("prototype")
     //@Bean(name = "comp1")
     // @Bean(name={"comp1", "cpmp2","jp"})
     public ConfigDesktop desktop() //  Using  the ConfigDesktop 

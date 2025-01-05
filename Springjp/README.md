@@ -67,3 +67,12 @@
 1. [Injecting obj using Java based Annotation Config](src/main/java/com/jspring6/javabasedconfig/AppConfig.java)
 
 2. [@Bean name in java Based Config](src/main/java/com/jspring6/javabasedConfigBeanName.java)
+
+### Scope Annotation and Prototype Bean 
+3. [Scope Annotation](src/main/java/com/jspring6/ScopeAnnottion.java)
+
+    -Class file ref: [App.java](src/main/java/com/jspring6/App.java) , [AppConfig](src/main/java/com/jspring6/javabasedconfig/AppConfig.java)
+
+### Autowire in Config Based Bean ..
+
+4. [autowire]()

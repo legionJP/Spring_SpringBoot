@@ -2,7 +2,6 @@ package com.jspring6;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.jspring6.javabasedconfig.AppConfig;
 
@@ -82,6 +81,11 @@ public class App
         ConfigDesktop dt1 = context.getBean("desktop", ConfigDesktop.class);
        // ConfigDesktop dt1 = context.getBean("comp1", ConfigDesktop.class);
         dt1.compile();
+
+
+// prototype bean see the Scope Annotation class file
+      
+        
 
         // Here By default the Bean Name is the Name of the Method so we have to use the method name desktop from appconfig.java
         // can give the name as arg to @Bean(name="com1") or multiple name as arrays and put the name in .getbean 
