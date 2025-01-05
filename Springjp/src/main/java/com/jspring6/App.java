@@ -74,11 +74,17 @@ public class App
 //---------------------------------------------------------------------------------------------------------------------------
 // 2. java Config Based Config : 
 
-        ApplicationContext context  = new AnnotationConfigApplicationContext(AppConfig.class);
-        ConfigDesktop dt = context.getBean(ConfigDesktop.class);
-        dt.compile();
+        ApplicationContext context  = new AnnotationConfigApplicationContext(AppConfig.class); //Specifying the type
+        // ConfigDesktop dt = context.getBean(ConfigDesktop.class);
+        // dt.compile();
 
+        // Bean name: 
+        ConfigDesktop dt1 = context.getBean("desktop", ConfigDesktop.class);
+       // ConfigDesktop dt1 = context.getBean("comp1", ConfigDesktop.class);
+        dt1.compile();
 
+        // Here By default the Bean Name is the Name of the Method so we have to use the method name desktop from appconfig.java
+        // can give the name as arg to @Bean(name="com1") or multiple name as arrays and put the name in .getbean 
     }
 }
 

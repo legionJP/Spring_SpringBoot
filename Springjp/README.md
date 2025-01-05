@@ -64,4 +64,6 @@
 
 # Creating the Spring Application Using "Java Based Config"
 
-1. 
+1. [Injecting obj using Java based Annotation Config](src/main/java/com/jspring6/javabasedconfig/AppConfig.java)
+
+2. [@Bean name in java Based Config](src/main/java/com/jspring6/javabasedConfigBeanName.java)
