@@ -83,12 +83,23 @@ public class App
         dt1.compile();
 
 
-// prototype bean see the Scope Annotation class file
-      
-        
-
         // Here By default the Bean Name is the Name of the Method so we have to use the method name desktop from appconfig.java
         // can give the name as arg to @Bean(name="com1") or multiple name as arrays and put the name in .getbean 
+
+// prototype bean see the Scope Annotation class file
+
+// Autowire for config based 
+        AlienInterfaceConfig obj1 = context.getBean(AlienInterfaceConfig.class);
+      //  obj1.setAge(21);
+        System.out.println(obj1.getAge());
+
+        obj1.coding();
+        obj1.getAge();
+
+
+        
+
+
     }
 }
 

@@ -1,6 +1,6 @@
 package com.jspring6;
 
-public class ScopeAnnottion {
+public class ScopeAnnotation {
     public void ScopeAnnottionExample()
     {
         System.out.println("Scope Annotation Example in Java Based Config ");

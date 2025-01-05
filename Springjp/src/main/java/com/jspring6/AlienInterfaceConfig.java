@@ -3,18 +3,19 @@ package com.jspring6;
 public class AlienInterfaceConfig {
     
 private int age;
-private Computer com;
-private Laptop lap;
+// private ConfigDesktop com1;
+private Computer com1;
+private ConfigDesktop lap;
 
 // constructor
 public AlienInterfaceConfig() {
-    System.out.println("AlienSpring obj created");
+    System.out.println("Alien Interface obj created");
 }
 
 public void coding() {
-    System.out.println("Alien Interface coding Now ");
-    com.compile();  
-    lap.compile();
+    System.out.println("Alien config Interface coding Now ");
+    com1.compile();  
+    // lap.compile();
 }
 
 public int getAge() {
@@ -26,18 +27,18 @@ public void setAge(int age) {
 }
 
 public Computer getCom() {
-    return com;
+    return com1;
 }
 
-public void setCom(Computer com) {
-    this.com = com;
+public void setCom(Computer com12) {
+    this.com1 = com12;
 }
 
-public Laptop getLap() {
+public ConfigDesktop getLap() {
     return lap;
 }
 
-public void setLap(Laptop lap) {
+public void setLap(ConfigDesktop lap) {
     this.lap = lap;
 }
 

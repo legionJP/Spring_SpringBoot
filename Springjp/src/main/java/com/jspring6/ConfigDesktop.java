@@ -1,6 +1,8 @@
 package com.jspring6;
 
-public class ConfigDesktop {
+// public class ConfigDesktop {
+
+public class ConfigDesktop implements Computer {
     
     public ConfigDesktop()
     {
