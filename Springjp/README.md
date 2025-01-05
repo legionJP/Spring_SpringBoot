@@ -77,3 +77,9 @@
 
 4. [Autowire Implementation Note](src/main/java/com/jspring6/javabasedconfig/AutowireConfigNotes.java) , [AppConfig](src/main/java/com/jspring6/javabasedconfig/AppConfig.java) ,[ref class](src/main/java/com/jspring6/AlienInterfaceConfig.java)
 
+- [Quaifier and Primary Bean](src/main/java/com/jspring6/javabasedconfig/AutowireConfigNotes.java)
+
+### Stereotype annotation @Component 
+- To tell the Spring that the file is part of Spring project 
+
+5. [ @Component Stereotype annotation ](src/main/java/com/jspring6/StereoTypeAnnotation.java)

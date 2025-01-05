@@ -1,11 +1,19 @@
 package com.jspring6;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+// @Component
+// @ComponentScan("com.jspring6")
+
 public class AlienInterfaceConfig {
     
 private int age;
 // private ConfigDesktop com1;
 private Computer com1;
 private ConfigDesktop lap;
+private Laptop laptoplap;
+
 
 // constructor
 public AlienInterfaceConfig() {
@@ -40,6 +48,14 @@ public ConfigDesktop getLap() {
 
 public void setLap(ConfigDesktop lap) {
     this.lap = lap;
+}
+
+public Laptop getLaptoplap() {
+    return laptoplap;
+}
+
+public void setLaptoplap(Laptop laptoplap) {
+    this.laptoplap = laptoplap;
 }
 
 

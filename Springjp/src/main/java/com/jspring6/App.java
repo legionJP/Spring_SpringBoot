@@ -78,9 +78,9 @@ public class App
         // dt.compile();
 
         // Bean name: 
-        ConfigDesktop dt1 = context.getBean("desktop", ConfigDesktop.class);
-       // ConfigDesktop dt1 = context.getBean("comp1", ConfigDesktop.class);
-        dt1.compile();
+    //     ConfigDesktop dt1 = context.getBean("desktop", ConfigDesktop.class);
+    //    // ConfigDesktop dt1 = context.getBean("comp1", ConfigDesktop.class);
+    //     dt1.compile();
 
 
         // Here By default the Bean Name is the Name of the Method so we have to use the method name desktop from appconfig.java

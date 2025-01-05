@@ -1,5 +1,9 @@
 package com.jspring6;
+
+import org.springframework.stereotype.Component;
+
 // public class Laptop
+@Component
 public class Laptop implements Computer 
 
 {

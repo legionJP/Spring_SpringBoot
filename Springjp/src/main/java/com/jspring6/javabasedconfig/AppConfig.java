@@ -1,12 +1,16 @@
 package com.jspring6.javabasedconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 import com.jspring6.AlienInterfaceConfig;
 import com.jspring6.ConfigDesktop;
+import com.jspring6.Laptop;
+
 import com.jspring6.Computer;
 
 
@@ -23,7 +27,7 @@ public class AppConfig {
     //     return obj;
         // return new AlienInterfaceConfig();
 
-    // Autowiring the Computer class which is implements of of ConfigDesktop 
+// Autowiring the Computer class which is implements of of ConfigDesktop 
 
         @Bean
         public AlienInterfaceConfig alienInterfaceConfig(@Autowired Computer com1){
@@ -45,6 +49,10 @@ public class AppConfig {
          // creating the obj but not injecting the obj and the Spring is creating and injecting the obj 
         // all things is done by spring create manage , inject , it look for the type of Desktop Bean
     }
+
+// If we have the two methods instance for bean  use the Qualifier or primary (here gets the laptop method priority )
+    // (see it in the Autowire config notes )
+   
 }
 
 // In the App.Java Put the context of the java based config 

@@ -36,3 +36,21 @@ public class AutowireConfigNotes {
 //   obj1.getAge();
 
 // see the ref of AlienInterfaceConfig 
+
+
+// PART 2: Use of the Primary an Qualifier
+// If we have the two methods instance for bean  use the Qualifier or primary (here gets the laptop method priority )
+
+
+ // @Bean
+    // public AlienInterfaceConfig alienInterfaceConfig(@Qualifier("desktop") @Autowired Computer com1){
+    // AlienInterfaceConfig obj = new AlienInterfaceConfig();
+    // obj.setAge(25);
+    // obj.setCom(com1); // when we assgn the desktop here we making it tightly coupled 
+    //     return obj;
+
+    // @Bean 
+    // @Primary
+    // public Laptop laplaptop(){
+    //     return new Laptop();
+    // }
