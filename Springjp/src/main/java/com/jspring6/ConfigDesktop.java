@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 // public class ConfigDesktop {
 
 @Component
-@primary
 public class ConfigDesktop implements Computer {
     
     public ConfigDesktop()

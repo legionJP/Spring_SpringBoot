@@ -86,12 +86,11 @@
 
 - Revisit topic to implement
 
-6. [Autowire ]()
-- implement?
+6. [Autowire ]((src/main/java/com/jspring6/StereoTypeAnnotation.java))
+- see the AlienInterfaceConfig Class
 
-7. [Primary and Qualifier]()
-- implement?
+7. [Primary and Qualifier](src/main/java/com/jspring6/StereoTypeAnnotation.java)
+- see the Dependent class and AlienInterfaceConfig Class
 
 
-8. [Scope and Value Annotation]()
-- implement?
+8. [Scope and Value Annotation](src/main/java/com/jspring6/ScopeAnnotation.java)

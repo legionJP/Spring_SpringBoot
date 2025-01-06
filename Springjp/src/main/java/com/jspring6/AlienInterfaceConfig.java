@@ -2,13 +2,16 @@ package com.jspring6;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AlienInterfaceConfig {
-    
+
+@Value("23")
 private int age;
+
 // private ConfigDesktop com1;
 @Autowired
 @Qualifier("laptop")
@@ -42,7 +45,7 @@ public Computer getCom() {
     return com1;
 }
 
-@Autowired
+// @Autowired
 public void setCom(Computer com12) {
     this.com1 = com12;
 }

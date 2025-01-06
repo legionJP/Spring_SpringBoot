@@ -1,10 +1,12 @@
 package com.jspring6;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@primary
+// @primary
+@Scope("prototype")
 // @Qualifier("lap") to use the name as Bean for the autowire 
 public class Desktop implements Computer {
 
