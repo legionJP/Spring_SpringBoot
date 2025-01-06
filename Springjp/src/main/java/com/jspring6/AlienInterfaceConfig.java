@@ -3,8 +3,7 @@ package com.jspring6;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-// @Component
-// @ComponentScan("com.jspring6")
+@Component
 
 public class AlienInterfaceConfig {
     

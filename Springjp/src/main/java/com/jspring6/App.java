@@ -96,10 +96,6 @@ public class App
         obj1.coding();
         obj1.getAge();
 
-
-        
-
-
     }
 }
 
