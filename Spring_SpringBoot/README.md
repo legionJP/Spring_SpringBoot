@@ -1,87 +1,21 @@
-# Spring_SpringBoot
-Guide for Spring Framework and Spring Boot
+# Spring and Spring Boot 
 
+## 1. Introduction to Spring
 
-### Spring 
+1. [Prerequisites for Spring](SpringandBootNote..md)
 
-#### Spring has the many Projects - Spring Boot , framework , services
+2. [Spring Docs](SpringandBootNote..md)
 
+3. [IOC and DI](SpringandBootNote..md)
 
-### Prerequisites for Java Spring:
-```
-Core Java:
-Understanding the basics of Java programming is essential, as Spring applications are written in Java. This includes knowledge of Java syntax, loops, control statements, data types, variables, strings, arrays, and exception handling1.
+## 2. Spring boot App
 
-### Object-Oriented Programming (OOP):
+- [Spring Boot App](sf6sb3/src/main/java/com/springboot/sf6sb3/Sf6sb3Application.java)
 
-### Collections Framework:
+4. [DI using Spring Boot](sf6sb3/src/main/java/com/springboot/sf6sb3/DISpring.java)
 
-Familiarity with Java collections such as List, Map, Set, etc., is important for managing data.
+5. [Auto wiring in Spring Boot](sf6sb3/src/main/java/com/springboot/sf6sb3/Laptop.java)
 
-### Servlets and JSP:
+### Note: After Completing the Spring Application Review the Below Topics
 
-Basic understanding of Servlets and JavaServer Pages (JSP) is beneficial, especially if you plan to develop web applications using Spring MVC.
-
-### Spring Core Basics:
-
-Knowledge of Spring core concepts such as Dependency Injection (DI), Spring containers, BeanFactory, ApplicationContext, Spring AOP, Spring Beans, and bean scopes.
-
-### Build Tools:
-
-Familiarity with build tools like Maven or Gradle, which are commonly used to manage dependencies and build Spring projects.
-
-### Basic Knowledge of Databases:
-
-Understanding how to interact with databases using JDBC or ORM frameworks like Hibernate can be helpful.
-
-### RESTful Services:
-Basic understanding of RESTful web services and how to create them using Spring Boot.
-```
-
-### Spring 
-
-~~~ 
-Spring is Framework and it is also lightweight framework,
-It works with the POJOs (plain Old Java Object).
-
-It was dependency injection now it has multiple dependecy, It is Ecosystem
-> It can build microservices , Reactive app, cloud and serveless app
-
-(It has the EJB , Struts, Hibernate all of the in one framework )
-~~~
-
-### Spring Boot: 
-
-```
-On the top of the Spring the SpringBoot Works on it , 
-It will create the project which works on the first go, no need to do the much configuration.
-
-Spring Boot 3 works on the spring6.
-
-
-```
-
-### Spring Docs 
-~~~
-https://docs.spring.io/spring-framework/reference/index.html
-~~~
-
-## IOC and DI
-
-~~~
-1. Inversion of control --> Inveritng the control : {Programmer create the object and control the flow of the object } ---> create , maintain nd destroy the object by programmer so you role sould be biz logic not the object control ---> So the Objcet and Control of it Spring do it with IOC Container .
--> IOC container will have the object and Spring will create 
--> IOC is the principle
-
-2. Dependency Injection : to inject the cpu object of cpu class into the laptop class we need the dependecy injection to inject it into laptop class . both the obj are avl in the IOC container.
-~~~
-
-
-## Di Using the Spring Boot: 
-
-
-# DI in the Spring
-
-~~~
- Any objects crerated by the spring is called the beans 
-~~~
+6. [Annotation in the Spring Boot](sf6sb3/src/main/java/com/springboot/sf6sb3/DISpring.java)
