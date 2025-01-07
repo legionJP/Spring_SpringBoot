@@ -23,9 +23,9 @@ public class SpringJdbCjpApplication {
 
 // set the values for the Students 
         Student s = context.getBean(Student.class);
-        s.setRollno(01);
+        s.setRollno(02);
         s.setName("JP");
-        s.setMarks(9);
+        s.setMarks(99);
 
 
 // Student service obj 
