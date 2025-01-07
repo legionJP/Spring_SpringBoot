@@ -1,10 +1,13 @@
 package com.jspring6.springjdbcjp;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.jspring6.springjdbcjp.model.Student;
+import com.jspring6.springjdbcjp.service.StudentService;
 
 @SpringBootApplication
 public class SpringJdbCjpApplication {
@@ -24,7 +27,16 @@ public class SpringJdbCjpApplication {
         s.setName("JP");
         s.setMarks(9);
 
-        addStudent(s);
+
+// Student service obj 
+        StudentService service = context.getBean(StudentService.class);
+
+// saving the student service // 
+        service.addStudent(s);
+        List<Student> students = service.getStudents();
+        System.out.println(students);
+        
+// should use save method  in the repo layer 
 
 // Using the H2 Database
 

@@ -7,4 +7,8 @@
 
     - [Model Context and Setting Values ](SpringJDBCjp/src/main/java/com/jspring6/springjdbcjp/SpringJdbCjpApplication.java)
 
-3. 
+## Service and Repo layer implementation
+
+3. [Service class/layer](src/main/java/com/jspring6/springjdbcjp/service/StudentService.java) , [App class](src/main/java/com/jspring6/springjdbcjp/SpringJdbCjpApplication.java)
+
+4. [ Repository class/layer](src/main/java/com/jspring6/springjdbcjp/repo/StudentRepo.java) , [App class](src/main/java/com/jspring6/springjdbcjp/SpringJdbCjpApplication.java)
