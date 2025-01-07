@@ -28,7 +28,7 @@ public class StudentRepo {
 // jdbc data execution 
 
         // query 
-        String query1 = "insert into students (rollno, name, marks) values(?,?,?)";
+        String query1 = "insert into students1 (rollno, name, marks) values(?,?,?)";
 
        int rows = jdbc.update(query1 , s.getRollno(), s.getName(), s.getMarks()); //  putting the value in the place of ? parmeter
        System.out.println(rows + " rows affected ");
@@ -39,39 +39,35 @@ public class StudentRepo {
 
     public List<Student> findAll() {
 
-         String sql = "select * from students";
-         
+         String sql = "select * from students1";
+
 // Using the RowMapper and Annonymous Class 
         // // execute
-        // // RowMapper
-        // RowMapper<Student> mapper = new RowMapper<Student>() {  // Rowmapper is interface and implement the mapRow and return the one row at a time 
+        // RowMapper
+        RowMapper<Student> mapper = new RowMapper<Student>() {  // Rowmapper is interface and implement the mapRow and return the one row at a time 
 
-        //     @Override
-        //     public Student mapRow(@NonNull ResultSet rs, int rowNum) throws SQLException{
-        //         Student s = new Student();
-        //         s.setRollno(rs.getInt("rollno"));
-        //         s.setName(rs.getString("name"));
-        //         s.setMarks(rs.getInt("marks"));
-        //         return s;
-
-                
-        //     }          
-            
-        // };
-        // return jdbc.query(sql, mapper); // sql(query) and obj of the rowmapper , return the list of students 
-
-        // List<Student> students = new ArrayList<>();
-        // return students;
-
-// Using the lambda Expression    
-
-        return jdbc.query(sql, (rs, rowNum) -> {  // herer resulset is mapper which has the rs and rowNum
-            Student s = new Student();
+            @Override
+            public Student mapRow(@NonNull ResultSet rs, int rowNum) throws SQLException{
+                Student s = new Student();
                 s.setRollno(rs.getInt("rollno"));
                 s.setName(rs.getString("name"));
                 s.setMarks(rs.getInt("marks"));
-                return s;   
-        });
+                return s;                
+            }          
+            
+        };
+        return jdbc.query(sql, mapper); // sql(query) and obj of the rowmapper , return the list of students1 
+
+
+// // Using the lambda Expression    
+
+//         return jdbc.query(sql, (rs, rowNum) -> {  // herer resulset is mapper which has the rs and rowNum
+//             Student s = new Student();
+//                 s.setRollno(rs.getInt("rollno"));
+//                 s.setName(rs.getString("name"));
+//                 s.setMarks(rs.getInt("marks"));
+//                 return s;   
+//         });
 
 
 

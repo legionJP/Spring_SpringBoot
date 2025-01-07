@@ -13,17 +13,13 @@ import com.jspring6.springjdbcjp.service.StudentService;
 public class SpringJdbCjpApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringJdbCjpApplication.class, args);
+ApplicationContext context = SpringApplication.run(SpringJdbCjpApplication.class, args);
 
-        System.out.println("Hello Spring  JDBC ");
-
-
-// Context 
-        ApplicationContext context = SpringApplication.run(SpringJdbCjpApplication.class, args);
+System.out.println("Hello Spring  JDBC ");
 
 // set the values for the Students 
         Student s = context.getBean(Student.class);
-        s.setRollno(02);
+        s.setRollno(104);
         s.setName("JP");
         s.setMarks(99);
 
