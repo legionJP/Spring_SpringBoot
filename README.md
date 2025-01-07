@@ -2,21 +2,16 @@
 
 ## Intro to Spring 6 and Spring Boot 3
 
-### [Spirng Boot Guide](Spring_SpringBoot/sf6sb3)
+### 1. [Spirng Boot Guide](Spring_SpringBoot/sf6sb3)
 
 ## Spring Framework and Core Spring
 
-### [Spring Guide ](Springjp/)
+### 2. [Spring Guide ](Springjp/)
 
 ## Spring JDBC
 
-### [Spring JDBC]()
+### 3. [Spring JDBC Project](SpringJDBCjp/src/)
 
-- JDBC Template -- It will helps the JDBC to connect with DB
-        2. Fire Queries
-        3. Process Data
-        4. Get Output
+- [JDBC Intro](https://github.com/legionJP/Java_language/blob/master/jdbc-example/src/main/java/com/example/App.java)
 
-    ### Every time when want to connect with database or do the db operation we have to send the connection req and every time new connection is created 
-
-    #### So we can use the Data Source and Spring will give those libraries     
+- [Spring JDBC Model](SpringJDBCjp/src/main/java/com/jspring6/springjdbcjp/model/Student.java)
