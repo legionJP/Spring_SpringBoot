@@ -9,6 +9,7 @@ public class SchemaH2DB {
 
 
 // If we Using the H2  DB create the Schema as Below : 
+// H2 is embedde in Memory DB
 
 // to create the schema we have to create it in the resource folder 
 // schema.sql for the schema and data.sql for the data 
