@@ -37,7 +37,7 @@ MVC (Model View Controller )
 so 
 # To create the 1. Controller ---> Have to use the Servlet 
 # To create the 2. View ---> use the JSP 
-# To create the 3. Model ----> Use the Simple Java Class or (POJO) --> Plain od Java Object class
+# To create the 3. Model ----> Use the Simple Java Class or (POJO) --> Plain old Java Object class
 ```
 # Note : 
 ```

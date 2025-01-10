@@ -1,7 +1,14 @@
 #
-### 5. Spring Boot Web App and MVC
+## Spring Boot Web App and MVC
 
 - [ Spring Boot Web App using the Spring Web](src/main/java/com/jspring6/springbootwebapp1/SpringBootWebApp1Application.java)
 
-- [ Creating a JSP Page ](src/main/java/com/jspring6/springbootwebapp1/)
+- [ MVC Intro ](/ServletWebsite/Docks/IntroToMVC.md)
 
+- [ Creating a JSP Page [View] ](src/main/webapp/WEB-INF/views/index.jsp)
+
+- [ Creating a Controller ](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+
+- [Mapping the Controller by Requset Mapping ](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+
+- 
