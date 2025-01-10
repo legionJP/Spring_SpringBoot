@@ -13,6 +13,8 @@ public class App
 
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
+
+        tomcat.getConnector(); // Initialize the connector , explicitly to bind on port 
         
         // tomcat.start();
         // tomcat.getServer().await();;
@@ -25,6 +27,8 @@ public class App
 
         Context context = tomcat.addContext("", null);
         
+        // mapping for the url and Servlet 
+
         Tomcat.addServlet(context, "ServletWebs", new ServletWebs()); // adding servlet for the
         context.addServletMappingDecoded("/hello", "ServletWebs");
 

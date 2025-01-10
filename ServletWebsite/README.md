@@ -1,14 +1,19 @@
 #
 # Servlet Web Project 
 
-# 1. Web App intro ;
+### 1. Web App intro ;
 
-# 2. Creating the Servlet Project 
+### 2. Creating the Servlet Project 
     
-    - 1. [Adding the Servlet Project API,embede tomcat dependencies](pom.xml)
+[Adding the Servlet Project API,embede tomcat dependencies](pom.xml)
 
-# 3. Running Tomcat 
+### 3. Running Tomcat 
 
-    - [Tomcat Configuration ]()
-# 4 Making the Servlet 
-    - 
+[Tomcat Configuration ](src/main/java/com/jspring6/)
+
+### 4 Making the Servlet for Method
+
+- [Servlet req amd response for service Method](src/main/java/com/jspring6/ServletWebs.java)
+
+- [Respond from Servlet to client](src/main/java/com/jspring6/RessponseClient.java)
+
