@@ -20,9 +20,12 @@
 #
 ### 4. Spring Boot Web App using Servlets
 
-[Servlet Intro](ServletWebsite/Docks/ServletsSpringBoot.md)
-[Spring Boot Servlet App](ServletWebsite/src/main/java/com/jspring6/App.java)
+- [Servlet Intro](ServletWebsite/Docks/ServletsSpringBoot.md)
+
+- [Spring Boot Servlet App](ServletWebsite/src/main/java/com/jspring6/App.java)
 
 #
-### 5. Spring Boot Web App using MVC
+### 5. Spring Boot Web App and MVC
+
+- [ Spring Boot Web App using the Spring Web](SpringBootWebApp1/src/main/java/com/jspring6/springbootwebapp1/SpringBootWebApp1Application.java)
 
