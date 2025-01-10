@@ -14,7 +14,7 @@ public class HomeController {
     @GetMapping("/home")
     public String home(){
         System.out.println(" Home Method Called ");
-        return "index";
+        return "index.jsp";
     }
 }
 
