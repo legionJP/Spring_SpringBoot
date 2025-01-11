@@ -9,7 +9,7 @@
 
 - [ Creating a Controller ](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
 
-- [Mapping the Controller by Requset Mapping ](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+- [Mapping the Controller by Request Mapping ](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
 
 - [Setting the Config for the JSP in the webapp](src/main/resources/application.properties) , [config file ](src/main/java/com/jspring6/springbootwebapp1/config/WebConfig.java) 
 
@@ -29,5 +29,8 @@
 [Display Data Using RequestParam](Docks/RequestParam.md)
   -[class](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
   
-[Model Object ]()
+[Model Attribute to add data](Docks/Modelattribute.md)
 
+[View Resolver](Docks/ViewResolver.md)
+
+[Model and View ](Docks/ModelandView.md)
