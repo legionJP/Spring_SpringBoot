@@ -13,4 +13,13 @@
 
 - [Setting the Config for the JSP in the webapp](src/main/resources/application.properties) , [config file ](src/main/java/com/jspring6/springbootwebapp1/config/WebConfig.java) 
 
-- [Sending data to Controller]()
+### Sending data to Controller
+- [Controller](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+- [View](src/main/webapp/WEB-INF/views/index.jsp)
+
+### Accepting Data using Servlet
+
+- [Accepting data servlet way](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+  - [Docks](Docks/ControllerReqRes.md)
+
+- []Display the Data on Page(/src/)

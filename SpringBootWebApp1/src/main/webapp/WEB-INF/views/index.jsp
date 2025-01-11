@@ -14,7 +14,6 @@
         <label for="num2" >Enter 2nd Num </label>
         <input type="text" id="num2" name="num2">
         <input type="submit" value="submit">
-
     </form>
     
 </body>
