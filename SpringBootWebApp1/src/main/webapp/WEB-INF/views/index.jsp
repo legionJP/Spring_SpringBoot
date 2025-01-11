@@ -15,6 +15,15 @@
         <input type="text" id="num2" name="num2">
         <input type="submit" value="submit">
     </form>
-    
+    <br>
+<%--    asking for the addMe controller--%>
+    <form action="addMe">
+        <label for="myID">Enter Id </label>
+        <input type="text" id="myID" name="myID"><br>
+        <label for="myName">Enter Name </label>"<br>
+        <input type="text" id="myName" name="myName"><br>
+        <input type="submit" value="submit">
+    </form>
+
 </body>
 </html>

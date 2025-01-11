@@ -34,3 +34,11 @@
 [View Resolver](Docks/ViewResolver.md)
 
 [Model and View ](Docks/ModelandView.md)
+  - [Obj Class ](src/main/java/com/jspring6/springbootwebapp1/MyInfo.java)
+  - [ Main class](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+
+
+[Need and Use of Model Attribute](Docks/Need_and_UseModelAttribute.md)
+  - [need of ModelAttribute (Part2) ](Docks/Need_and_UseModelAttribute.md)
+  - [Use of ModelAttribute  (Part3) ](Docks/Need_and_UseModelAttribute.md)
+- 
