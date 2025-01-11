@@ -17,9 +17,17 @@
 - [Controller](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
 - [View](src/main/webapp/WEB-INF/views/index.jsp)
 
-### Accepting Data using Servlet
+### Accepting Data using Servlet and Http Session
 
 - [Accepting data servlet way](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
   - [Docks](Docks/ControllerReqRes.md)
 
-- []Display the Data on Page(/src/)
+[Display the Data on Page](/src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+- [result view](src/main/webapp/WEB-INF/views/result.jsp)
+  - [Docks](Docks/DisplayData_session.md)
+
+[Display Data Using RequestParam](Docks/RequestParam.md)
+  -[class](src/main/java/com/jspring6/springbootwebapp1/HomeController.java)
+  
+[Model Object ]()
+

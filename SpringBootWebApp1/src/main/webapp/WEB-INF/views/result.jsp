@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-<h2> Result is: </h2>
+<h2> Result is: <%=session.getAttribute("result")%> </h2>
 
+<!--- JSTL Way --->
+
+<h2> Result is : ${result} </h2>
 </body>
 </html>
