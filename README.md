@@ -16,16 +16,22 @@
 
 - [Spring JDBC Model](SpringJDBCjp/src/main/java/com/jspring6/springjdbcjp/model/Student.java)
 
-
 #
-### 4. Spring Boot Web App using Servlets
+## 4. Spring Boot Web App using Servlets
 
 - [Servlet Intro](ServletWebsite/Docks/ServletsSpringBoot.md)
 
 - [Spring Boot Servlet App](ServletWebsite/src/main/java/com/jspring6/App.java)
 
 #
-### 5. Spring Boot Web App and MVC
+## 5. Spring Boot Web App and MVC
 
 - [ Spring Boot Web App using the Spring Web](SpringBootWebApp1/src/main/java/com/jspring6/springbootwebapp1/SpringBootWebApp1Application.java)
 
+#
+## 6. Spring Web  MVC (without SpringBoot)
+
+- We have to use the tomcat externally and for the tomcat 10 we 
+- need to use the Jakarta , instead of the javax 
+- [Spring MVC ]()
+- 
