@@ -27,3 +27,4 @@
 
 </body>
 </html>
+<%--index.jsp for home page--%>

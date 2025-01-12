@@ -117,11 +117,3 @@ public class HomeController {
         }
 
 }
-
-
-/*
-// Controller
- // this method is responsible for calling the home.jsp and should return the view technology
- * You can use GetMapping other methods as well
- *
- */

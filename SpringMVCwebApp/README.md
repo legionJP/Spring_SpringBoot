@@ -1,15 +1,26 @@
-# Spring MV web APP 
+# Spring MVC Web APP 
 
-# Dependency Needed for the Spring MVC Project 
-- add the below dependencies in the pom.xml
-#### Spring web MVC -- version 
+```markdown
+- We have to use the tomcat externally and for the tomcat 10 we 
+- need to use the Jakarta , instead of the javax 
+```
 
-# Running the Tomcat for IDE (IntelliJ)
+## 1. Dependency for Spring MVC Project 
 
+```markdown
+ - add the below dependencies in the pom.xml
+    ## 1.  Spring web MVC -- version
+```
+
+#  2. Running the Tomcat for IDE (IntelliJ)
+
+```markdown
 - Set up the Tomcat Server from the Settings 
 - Edit the Configuration from service option in the IJ 
+```
 
-#  Dispatcher servlet 
+# 3. Dispatcher servlet 
+```markdown
 - to call the Controller 
 - Tomcat as the servlet container , responsible to run the server 
 - In Spring there is multiContainer 
@@ -17,6 +28,10 @@
 - Spring has the Dispatcher servlet and , and you have to configure , 
 - so tomcat send the request to Dispatcher servlet called the web.xml 
 
+```
+### WEB.XML file for  Dispatcher servlet config.
+
+- [Web.xml File](src/main/webapp/WEB-INF/web.xml)
 
 ```xml
 
@@ -38,9 +53,11 @@
 </web-app>
 
 ```
-# Error the Dispatch Servlet 
+#  4. Resolve the Error for Dispatch Servlet  
 
 - Have to create the [/WEB-INF/jspring6-servlet.xml] to configure the servlet 
+
+### Error 
 ```markdown
 Root Cause
 
@@ -52,8 +69,10 @@ java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/
 org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:165)
 ```
 
-# Configuring the Dispatcher Servlet file : 
- - make the file  jspring6-servlet.xml , in the webapp/WEB-INF/
+# 5. Configuring the Dispatcher Servlet file : 
+ - add the file  'jspring6-servlet.xml' , in the webapp/WEB-INF/
+
+- [jspring6-servlet.xml file](src/main/webapp/WEB-INF/jspring6-servlet.xml)
 
 ```xml
 
@@ -80,11 +99,12 @@ org.springframework.web.context.support.ServletContextResource.getInputStream(Se
 
 ```
 
-# Getting error for not founding the View 
+# 6 View Resolver Error 
+- Getting error for not founding the View 
 - at http://localhost:8080/SpringMVCwebApp_war/home bcz the method returns 
 - the index.jsp 
 - we have to resolve it by using the view resolver 
-- 
+
 ```markdown
 HTTP Status 404 – Not Found
 Type Status Report
@@ -96,9 +116,10 @@ Description The origin server did not find a current representation for the targ
 Apache Tomcat/10.1.34
 ```
 
-# Internal Resource View Resolver 
+# 7. Configure Internal Resource View Resolver 
 - Dispatch server is not able to find the jsp file 
-- adding the bean in the resolver to solve it 
+- adding the bean in the resolver to solve it
+- [Config file ](src/main/webapp/WEB-INF/jspring6-servlet.xml)
 
 ```xml
  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

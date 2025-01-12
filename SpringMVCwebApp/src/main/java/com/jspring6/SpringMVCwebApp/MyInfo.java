@@ -1,5 +1,6 @@
 package com.jspring6.SpringMVCwebApp;
 
+// Method for accepting the data for name and ID
 public class MyInfo
 {
     public String myName;

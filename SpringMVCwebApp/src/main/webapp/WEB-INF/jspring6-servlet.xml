@@ -21,5 +21,5 @@
 </beans>
 
 <!-- We don't have to do the mapping in the xml if the mapping is done
- in the controller or in the class file
+ in the controller or in the class file.
  -->

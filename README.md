@@ -31,7 +31,4 @@
 #
 ## 6. Spring Web  MVC (without SpringBoot)
 
-- We have to use the tomcat externally and for the tomcat 10 we 
-- need to use the Jakarta , instead of the javax 
 - [Spring MVC ](SpringMVCwebApp)
-- 
