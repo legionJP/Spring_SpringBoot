@@ -42,4 +42,3 @@
 ## 8. REST APIs in Spring Boot
  - [Intro to REST APIS ](https://github.com/legionJP/Learn_APIs)
  - [REST APIS in Spring ](RESTSpringIntro.md)
-https://github.com/navinreddy20/spring6-course/tree/80e0c059c5c259ef6009838a934ed9e92865c3d7/React%20UI
