@@ -15,9 +15,12 @@ public class JobRestController {
 
     @Autowired
     private JobService service;
+    @Autowired
+    private JobPost jobPost;
 
-//1. Controller to return all the job posts
-    @GetMapping("jobPosts")
+    //1. Controller to return all the job posts
+   // @GetMapping(path = "jobPosts", produces = {"application/json"})
+    @GetMapping(value = "jobPosts")
     //@ResponseBody
     public List<JobPost> getAllJobs() {
         return  service.getAllJobs();
@@ -32,4 +35,36 @@ public class JobRestController {
     {
         return service.getJob(postId);
     }
+
+// 3 Add job Controller using the API endpoint
+
+    @PostMapping("jobPosts")
+   // @PostMapping(path = "jobPosts", consumes = {"application/xml"})
+//    public void addJob(@RequestBody JobPost jobPost) // to accept the json data body
+    public JobPost addJob(@RequestBody JobPost jobPost) // to accept the json data body
+    {
+        service.addJob(jobPost);
+//        return jobPost;
+        // returning the data from where  it is saved
+        return service.getJob(jobPost.getPostId());
+    }
+
+    // 4. JobPost Put Method
+
+    @PutMapping("jobPosts")   // same url but diferent Methods
+    public JobPost updateJob(@RequestBody JobPost jobPost)
+    {
+        service.updateJob(jobPost);
+        return service.getJob(jobPost.getPostId());
+    }
+
+    //5. JobPost delete
+
+    @DeleteMapping("jobPosts/{postId}")
+    public String deleteJob(@PathVariable int postId)
+    {
+        service.deleteJob(postId);
+        return "Success, Deleted JOB Post: ";
+    }
+
 }

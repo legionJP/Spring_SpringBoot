@@ -2,30 +2,25 @@ package com.jspring6.springbootrest.repo;
 import com.jspring6.springbootrest.model.JobPost;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Repository
 // It will have all the data for returning the data for the service
 public class JobRepo {
 
-    List<JobPost>  jobs = new ArrayList<>(Arrays.asList(
-            new JobPost(1,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
-            new JobPost(2,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
-            new JobPost(3,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
-            new JobPost(4,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
-            new JobPost(5,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer"))
+    List<JobPost> jobs = new ArrayList<>(Arrays.asList(
+            new JobPost(1, "Java Developer", "Must have good understating in Java", "1", Collections.singletonList("Java Developer")),
+            new JobPost(2, "Java Developer", "Must have good understating in Java", "1", Collections.singletonList("Java Developer")),
+            new JobPost(3, "Java Developer", "Must have good understating in Java", "1", Collections.singletonList("Java Developer")),
+            new JobPost(4, "Java Developer", "Must have good understating in Java", "1", Collections.singletonList("Java Developer")),
+            new JobPost(5, "Java Developer", "Must have good understating in Java", "1", Collections.singletonList("Java Developer"))
     ));
 
-    public List<JobPost> getAllJobs()
-    {
+    public List<JobPost> getAllJobs() {
         return jobs;
     }
 
-    public void addJob(JobPost job)
-    {
+    public void addJob(JobPost job) {
         jobs.add(job);
         System.out.println(jobs);
     }
@@ -36,11 +31,53 @@ public class JobRepo {
 
     // returning the matching post
     public JobPost getJob(int postId) {
-        for(JobPost job: jobs)
-        {
-            if(job.getPostId() ==postId)
+        for (JobPost job : jobs) {
+            if (job.getPostId() == postId)
                 return job;
         }
         return null;
     }
+
+    // updating the job using the put
+    public void updateJob(JobPost jobPost) {
+        for (JobPost jobPost1 : jobs) {
+            if (jobPost1.getPostId() == jobPost.getPostId()) {
+                jobPost1.setPostProfile(jobPost.getPostProfile());
+                jobPost1.setPostDesc(jobPost.getPostDesc());
+                jobPost1.setPostId(jobPost.getPostId());
+                jobPost1.setPostTechStack(jobPost.getPostTechStack());
+
+            }
+        }
+    }
+
+//    public void deleteJob(int postId) {
+//        // jobs.removeIf(jobPost -> jobPost.getPostId() == postId); // collection loop
+//        for (JobPost jobPost : jobs) {
+//            if (jobPost.getPostId() == postId) {
+//                jobs.remove(jobPost);
+//            }
+//        }
+//    }
+
+    public void deleteJob(int postId) {
+        Iterator<JobPost> iterator = jobs.iterator();
+        while (iterator.hasNext()) {
+            JobPost jobPost = iterator.next();
+            if (jobPost.getPostId() == postId) {
+                iterator.remove();  // Safely remove using the iterator
+                return;  // Exit the method after removing the item
+            }
+        }
+    }
+
 }
+
+/*
+// loop to delete the post :
+ for(JobPost jobPost: jobs){
+            if(jobPost.getPostId() == postId)
+            {
+                jobs.remove(jobPost);
+            }
+ */

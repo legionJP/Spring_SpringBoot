@@ -16,7 +16,7 @@ public class JobService {
         return repo.getAllJobs();
     }
 
-    // method to add data
+    // method to add job post data
     public void addJob(JobPost jobPost) {
         repo.addJob(jobPost);
     }
@@ -26,7 +26,15 @@ public class JobService {
         return repo.returnAllJobPosts();
     }
 
-    public JobPost getJob(int i) {
-        return  repo.getJob(i);
+    public JobPost getJob(int postId) {
+        return  repo.getJob(postId);
+    }
+
+    public void updateJob(JobPost jobPost) {
+        repo.updateJob(jobPost);
+    }
+
+    public void deleteJob(int postId) {
+        repo.deleteJob(postId);
     }
 }
