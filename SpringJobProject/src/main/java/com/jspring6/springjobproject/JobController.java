@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class JobController {
 
-
+    @Autowired
     private JobService service;
     @RequestMapping({"/", "/home"})
     public String home(){

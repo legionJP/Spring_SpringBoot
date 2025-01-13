@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -11,11 +12,11 @@ import java.util.List;
 public class JobRepo {
 
     List<JobPost>  jobs = new ArrayList<>(Arrays.asList(
-            new JobPost(1,"Java Developer","Must have good understating in Java","1","Java Developer"),
-            new JobPost(2,"Java Developer","Must have good understating in Java","1","Java Developer"),
-            new JobPost(3,"Java Developer","Must have good understating in Java","1","Java Developer"),
-            new JobPost(4,"Java Developer","Must have good understating in Java","1","Java Developer"),
-            new JobPost(5,"Java Developer","Must have good understating in Java","1","Java Developer")
+            new JobPost(1,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
+            new JobPost(2,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
+            new JobPost(3,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
+            new JobPost(4,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer")),
+            new JobPost(5,"Java Developer","Must have good understating in Java","1", Collections.singletonList("Java Developer"))
     ));
 
     public List<JobPost> getAllJobs()
