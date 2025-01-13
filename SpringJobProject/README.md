@@ -1,14 +1,10 @@
-#
 # Spring Boot Job App Project
 
-
 # 1. Understanding the Project Views
-
 ```markdown
 1. home view :  It will have the , add  job , view-all-jobs 
 2. mapping urls to map the all views        
 ```
-
 # 2. views 
 - [Views files](src/main/webapp/views)
 
@@ -29,4 +25,7 @@
 - [Job Model Layer](src/main/java/com/jspring6/springjobproject/model/JobPost.java)
 - [Job Repo Layer ](src/main/java/com/jspring6/springjobproject/repo/JobRepo.java)
 
-# 7. 
+# 7. Working with View Data 
+
+- [Handel the viewallJobs View ](src/main/java/com/jspring6/springjobproject/JobController.java)
+- [view file](src/main/webapp/views/viewalljobs.jsp)

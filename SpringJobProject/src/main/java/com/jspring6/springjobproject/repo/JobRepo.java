@@ -29,4 +29,8 @@ public class JobRepo {
         jobs.add(job);
         System.out.println(jobs);
     }
+
+    public List<JobPost> returnAllJobPosts() {
+        return jobs;
+    }
 }

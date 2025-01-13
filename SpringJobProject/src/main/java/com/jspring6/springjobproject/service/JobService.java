@@ -22,4 +22,7 @@ public class JobService {
     }
 
 
+    public List<JobPost> returnAllJobPosts() {
+        return repo.returnAllJobPosts();
+    }
 }
