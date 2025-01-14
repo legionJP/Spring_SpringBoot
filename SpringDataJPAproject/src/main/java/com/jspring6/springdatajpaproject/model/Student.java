@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 
-@Entity
+@Entity                   //db table
 public class Student {
 
-    @Id
+    @Id                   // primary key
     private int rollno;
     private String name;
     private int marks;
@@ -43,5 +43,5 @@ public class Student {
     
 }
 
-// clas Name will be the tables 
+// class Name will be the tables
 // and obj will be the columns 
