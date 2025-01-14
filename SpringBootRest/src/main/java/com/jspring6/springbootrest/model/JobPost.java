@@ -23,6 +23,7 @@ import java.util.List;
 //    private List<String> postTechStack;
 //}
 
+// Spring JPA 
 
 @Data
 @AllArgsConstructor  // Using the Lombok to make constructor

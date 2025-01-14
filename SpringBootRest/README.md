@@ -174,3 +174,27 @@ so add the dependencies in pom.xml for the jackson xml
 
 - #### [Job Rest API APP](/SpringBootRest/)
 
+- [Find By keyword using JPA](src/main/java/com/jspring6/springbootrest/repo/JobRepo.java)
+
+```java
+
+@Repository
+public interface JobRepo extends JpaRepository<JobPost, Integer> {
+
+    // method using the DSL in Spring JPA 
+    List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile, String postDesc);
+    // I will hit this query 
+    // Hibernate: select jp1_0.post_id,jp1_0.post_desc,jp1_0.post_profile,jp1_0.post_tech_stack,jp1_0.req_experience from job_post jp1_0 where jp1_0.post_profile like ? escape '\' or jp1_0.post_desc like ? escape '\'
+
+
+}
+
+// Controller
+        @GetMapping("jobPosts/keyword/{keyword}")
+       public List<JobPost> searchbyKeyword(@PathVariable("keyword") String keyword)
+       {
+            return service.search(keyword);
+       }
+
+```
+

@@ -4,9 +4,17 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.*;
+import java.util.List;
+
 
 @Repository
 public interface JobRepo extends JpaRepository<JobPost, Integer> {
+
+    // method using the DSL in Spring JPA 
+    List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile, String postDesc);
+    // I will hit this query 
+    // Hibernate: select jp1_0.post_id,jp1_0.post_desc,jp1_0.post_profile,jp1_0.post_tech_stack,jp1_0.req_experience from job_post jp1_0 where jp1_0.post_profile like ? escape '\' or jp1_0.post_desc like ? escape '\'
+
 
 }
 

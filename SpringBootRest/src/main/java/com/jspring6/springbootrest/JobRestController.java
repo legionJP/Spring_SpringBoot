@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 //@Controller
 @RestController  // For the Rest we can use the rest-controller and no need of the @ResponseBody annotain
@@ -30,6 +33,7 @@ public class JobRestController {
 
 //    @GetMapping("jobPosts/3")
 //  @GetMapping("jobPosts/{postId}/{something}")    // for the dynamic
+
     @GetMapping("jobPosts/{postId}")    // for the dynamic
     public JobPost getJobById(@PathVariable("postId") int postId)
     {
@@ -72,5 +76,19 @@ public class JobRestController {
         service.load();
         return "Success";
     }
+
+    // Getting the job by the keyword below is by the job id
+
+    // @GetMapping("jobPosts/{postId}")    // for the dynamic
+    // public JobPost getJobById(@PathVariable("postId") int postId)
+    // {
+    //     return service.getJob(postId);
+    // }
+
+        @GetMapping("jobPosts/keyword/{keyword}")
+       public List<JobPost> searchbyKeyword(@PathVariable("keyword") String keyword)
+       {
+            return service.search(keyword);
+       }
 
 }

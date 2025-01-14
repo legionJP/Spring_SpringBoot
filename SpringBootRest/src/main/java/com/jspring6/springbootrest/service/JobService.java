@@ -78,12 +78,17 @@ public class JobService {
     {
         List<JobPost> jobs = new ArrayList<>(Arrays.asList(
                 new JobPost(1, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
-                new JobPost(2, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
-                new JobPost(3, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
-                new JobPost(4, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
-                new JobPost(5, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer"))
+                new JobPost(2, "Java Developer", "Must have best understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(3, "Java Developer", "Must have excellent understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(4, "Java Developer", "Must have better understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(5, "Python Developer", "Must have good understating in Py", "1", Arrays.asList("Python Developer"))
         ));
         repo.saveAll(jobs);
+    }
+
+    public List<JobPost> search(String keyword) {
+        
+        return repo.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
     }
 
 }
