@@ -4,37 +4,86 @@ import com.jspring6.springbootrest.model.JobPost;
 import com.jspring6.springbootrest.repo.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+//@Service
+//public class JobService {
+//
+//    @Autowired
+//    public JobRepo repo;
+//
+//    // get all jobs list
+//    public List<JobPost> getAllJobs(){
+//        return repo.getAllJobs();
+//    }
+//
+//    // method to add job post data
+//    public void addJob(JobPost jobPost) {
+//        repo.addJob(jobPost);
+//    }
+//
+//
+//    public List<JobPost> returnAllJobPosts() {
+//        return repo.returnAllJobPosts();
+//    }
+//
+//    public JobPost getJob(int postId) {
+//        return  repo.getJob(postId);
+//    }
+//
+//    public void updateJob(JobPost jobPost) {
+//        repo.updateJob(jobPost);
+//    }
+//
+//    public void deleteJob(int postId) {
+//        repo.deleteJob(postId);
+//    }
+//}
+//
+
+// FOR JPA use
 
 @Service
 public class JobService {
+
     @Autowired
     public JobRepo repo;
 
     // get all jobs list
     public List<JobPost> getAllJobs(){
-        return repo.getAllJobs();
+        return repo.findAll();
     }
 
     // method to add job post data
     public void addJob(JobPost jobPost) {
-        repo.addJob(jobPost);
-    }
-
-
-    public List<JobPost> returnAllJobPosts() {
-        return repo.returnAllJobPosts();
+        repo.save(jobPost);
     }
 
     public JobPost getJob(int postId) {
-        return  repo.getJob(postId);
+        return  repo.findById(postId).orElse(new JobPost());
     }
 
     public void updateJob(JobPost jobPost) {
-        repo.updateJob(jobPost);
+        repo.save(jobPost);
     }
 
     public void deleteJob(int postId) {
-        repo.deleteJob(postId);
+        repo.deleteById(postId);
     }
+
+    public void load()
+    {
+        List<JobPost> jobs = new ArrayList<>(Arrays.asList(
+                new JobPost(1, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(2, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(3, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(4, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer")),
+                new JobPost(5, "Java Developer", "Must have good understating in Java", "1", Arrays.asList("Java Developer"))
+        ));
+        repo.saveAll(jobs);
+    }
+
 }

@@ -67,4 +67,10 @@ public class JobRestController {
         return "Success, Deleted JOB Post: ";
     }
 
+    @GetMapping("load")
+    public String loadData(){
+        service.load();
+        return "Success";
+    }
+
 }

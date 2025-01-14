@@ -169,3 +169,8 @@ so add the dependencies in pom.xml for the jackson xml
     }
 
 ```
+
+### JPA in Job APP
+
+- #### [Job Rest API APP](/SpringBootRest/)
+

@@ -48,4 +48,5 @@
 # 
 ## 9. Spring DataJPA
 
-- [DataJPA  and Hibernate in Spring ](SpringDataJPAproject)
+- [DATA JPA](SpringDataJPAproject/)
+- [JPA in Rest APP  ](SpringBootRest/)
