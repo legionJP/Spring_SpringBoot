@@ -46,5 +46,5 @@
  - [Intro to REST APIS ](https://github.com/legionJP/Learn_APIs)
 
  - 
- - [REST APIS in Spring  intro ](RESTSpringIntro.md)
+ - [REST APIS in Spring  intro ](SpringBootRest/RESTSpringIntro.md)
 
