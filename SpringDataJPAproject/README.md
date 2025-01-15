@@ -1,7 +1,20 @@
 # Spring DataJPA
 
+```markdown
+Spring data JPA will do operations with the connected DB
+and do the ORM operations.
+```
 
 # 1. ORM AND JPA
+
+```markdown
+- ORM: Object Relation Mapping 
+- IN ORM : Class is Table , and vars. will be column filed and var type str, int will be column type 
+- By using the ORM Tool we map these thing  in the table ex : Hibernet 
+
+- JPA : if library is changed from Hibernet to other library the specification like JPA (java Persistent API)
+- will make easy to implements with other ORM library 
+```
 
 # 2. Creating Table and Inserting Data using the JPA
 
