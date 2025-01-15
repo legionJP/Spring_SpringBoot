@@ -67,12 +67,12 @@ public class ProductController {
 // Image Controller , 
 
     @PostMapping("/product")
-    public ResponseEntity<?>  addProdyuct(@RequestPart Product product, @RequestPart MultipartFile image)
+    public ResponseEntity<?>  addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile)
    {
-        Product saveProdcut;
+        Product saveProduct = null;
         try {
-            saveProdcut = productService.addProduct(product, image);
-            return new ResponseEntity<>(saveProdcut, HttpStatus.CREATED);
+            saveProduct = productService.addProduct(product, imageFile);
+            return new ResponseEntity<>(saveProduct, HttpStatus.CREATED);
 
         } catch (IOException e) {
             // throw new RuntimeException(e);

@@ -71,6 +71,8 @@
 ### 6. Add Product with Image
 
 ### Handling the image 
+
+# Model 
 ```java
 
     private String imageName;
@@ -87,3 +89,22 @@
 //2.  send the json and image seperateley (Using the 2nd way )
 ```
 
+### Controller
+```java
+// Image Controller , 
+
+    @PostMapping("/product")
+    public ResponseEntity<?>  addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile)
+   {
+        Product saveProduct = null;
+        try {
+            saveProduct = productService.addProduct(product, imageFile);
+            return new ResponseEntity<>(saveProduct, HttpStatus.CREATED);
+
+        } catch (IOException e) {
+            // throw new RuntimeException(e);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+```
