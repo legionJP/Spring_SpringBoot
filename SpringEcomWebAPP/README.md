@@ -108,3 +108,48 @@
     }
     
 ```
+
+# 7. Fetch Product  Image 
+
+- Use the front-end 3 
+```java
+
+    
+// Image Fetching Controller 
+
+    @GetMapping("product/{productId}/image")
+    public ResponseEntity<byte []> getImageByProductId(@PathVariable int productId)
+    {
+        Product product = productService.getProductById(productId);
+
+        if(product.getId()>0)
+            return new ResponseEntity<>(product.getImageData(), HttpStatus.OK);
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);    
+
+    }
+
+```
+
+# 8. Update and Delete Product 
+
+```java
+
+
+
+// Delete Controller 
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id)
+    {
+        Product product = productService.getProductById(id);
+        if(product != null){
+            productService.deleteProduct(id);
+            return new ResponseEntity<>("Deleted", HttpStatus.OK);
+        }
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+// In service use the deleteByID(id)
+
+```

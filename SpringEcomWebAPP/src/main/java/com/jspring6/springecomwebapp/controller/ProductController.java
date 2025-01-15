@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -80,7 +82,53 @@ public class ProductController {
         }
     }
     
+// Image Fetching Controller 
 
+    @GetMapping("product/{productId}/image")
+    public ResponseEntity<byte []> getImageByProductId(@PathVariable int productId)
+    {
+        Product product = productService.getProductById(productId);
+
+        if(product.getId()>0)
+            return new ResponseEntity<>(product.getImageData(), HttpStatus.OK);
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);    
+
+    }
+
+// Update and delete controller
+
+    @PutMapping("/product/{id}")
+    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product, @RequestPart MultipartFile imageFile)
+    {
+        Product updatedProduct = null;
+        try{
+            updatedProduct = productService.updateProduct(product, imageFile);
+            return new ResponseEntity<>("updated",HttpStatus.OK);
+
+        }
+        catch(IOException e)
+        {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    
+    // You can use the productservice.addOrUpdateProduct so you don't have to need to create the 2 methods in the service 
+
+
+// Delete Controller 
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id)
+    {
+        Product product = productService.getProductById(id);
+        if(product != null){
+            productService.deleteProduct(id);
+            return new ResponseEntity<>("Deleted", HttpStatus.OK);
+        }
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
 
 }
