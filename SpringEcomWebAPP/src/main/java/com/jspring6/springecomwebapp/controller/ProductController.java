@@ -131,6 +131,18 @@ public class ProductController {
     }
 
 
+// Search Controller 
+
+    @GetMapping("/product/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword) {
+
+        List<Product> products= productService.searchProducts(keyword);
+        System.out.println("searching with " +keyword);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+    
+
+
 }
 
 // controller akses to service , and service will talk to repo layer 

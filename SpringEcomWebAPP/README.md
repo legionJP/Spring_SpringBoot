@@ -153,3 +153,22 @@
 // In service use the deleteByID(id)
 
 ```
+
+# 9. Searching the Product by keyword
+
+
+```java
+
+  
+    @Query
+    ("SELECT p FROM Product p WHERE " +
+       "LOWER(p.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+       "LOWER(p.brand) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+       "LOWER(p.description) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+       "LOWER(p.category) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+// List<Product> searchProducts(@Param("keyword") String keyword);
+     List<Product> searchProducts(String keyword);
+
+```
+#### [Repo Search Query ](src/main/java/com/jspring6/springecomwebapp/repo/ProductRepo.java)
+
