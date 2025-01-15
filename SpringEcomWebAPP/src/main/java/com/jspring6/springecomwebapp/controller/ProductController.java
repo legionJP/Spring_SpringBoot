@@ -1,6 +1,9 @@
 package com.jspring6.springecomwebapp.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,10 +14,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.jspring6.springecomwebapp.model.Product;
 import com.jspring6.springecomwebapp.service.ProductService;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -54,6 +63,24 @@ public class ProductController {
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+// Image Controller , 
+
+    @PostMapping("/product")
+    public ResponseEntity<?>  addProdyuct(@RequestPart Product product, @RequestPart MultipartFile image)
+   {
+        Product saveProdcut;
+        try {
+            saveProdcut = productService.addProduct(product, image);
+            return new ResponseEntity<>(saveProdcut, HttpStatus.CREATED);
+
+        } catch (IOException e) {
+            // throw new RuntimeException(e);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+
 
 
 }

@@ -67,3 +67,23 @@
 
 - #### [Service Method ](src/main/java/com/jspring6/springecomwebapp/service/ProductService.java)
 
+
+### 6. Add Product with Image
+
+### Handling the image 
+```java
+
+    private String imageName;
+    private String imageType;
+
+    @Lob  // large binary object 
+    private byte[] imageData;
+
+
+// Hndling the Images 
+// By using the base 64 encoder 
+
+//1.  convert images into text from and decode 
+//2.  send the json and image seperateley (Using the 2nd way )
+```
+
