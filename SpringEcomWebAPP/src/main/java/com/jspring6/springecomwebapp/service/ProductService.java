@@ -13,10 +13,19 @@ public class ProductService {
 
     @Autowired
     private ProductRepo productRepo;
+
     public  List<Product> getAllProducts()
     {
         return productRepo.findAll();
     }
+// service Method to return the product by id 
+    public Product getProductById(int id) {
+        
+        // return productRepo.findById(id).get();    // or can use the or.Else return empty 
+        return productRepo.findById(id).orElse(new Product(-1));    // or can use the or.Else return empty 
+
+    } 
+
 
 
 }

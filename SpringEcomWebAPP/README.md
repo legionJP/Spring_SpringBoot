@@ -45,3 +45,25 @@
 
 ### 5. Fetch product By Id
 
+### Controller
+
+```java
+
+ // Controller to return the product by ID  
+    @GetMapping("/product/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable int id)
+    {
+        Product product = productService.getProductById(id);
+        if(product.getId()>0)
+        {
+            return new ResponseEntity<>(product, HttpStatus.OK);
+
+        }
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+```
+
+- #### [Service Method ](src/main/java/com/jspring6/springecomwebapp/service/ProductService.java)
+
