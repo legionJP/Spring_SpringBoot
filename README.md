@@ -64,3 +64,22 @@
 
 #
 ## Spring AOP 
+
+```markdown
+
+# AOP : Aspect Oriented Programming 
+- AOP complement the OOP.
+
+# Need of AOP
+- it solves the problem of cross cutting concern 
+- We need to write a lot of lines of code , but for big app we need to focus more on the
+application bussiness logic ,
+- when you are doing a lot of processing you need to maintain like
+// log
+// sec
+// validation 
+
+- if all above things are written in one file it will be hard to maintain the things.
+// in Spring AOP the all of the above methods will be called automatically
+
+```
