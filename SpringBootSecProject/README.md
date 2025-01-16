@@ -32,4 +32,35 @@
 ```
 
 # 1. Default Login Form 
+-  ### [Spring Security dependency](pom.xml)
 
+```markdown
+# Spring Security -  
+- The Spring Security add the one more layer of Spring Security with multiple filter and - then Dispatch Servlet -- then the Servlet sends the request to the particular Controller 
+
+```
+
+# 2. Spring Security Layers 
+
+```markdown
+
+- By default Filters : 
+
+1. Filter Chain 
+(Client -> Servlet Container -->Filter1-filter2 (They can call eachother for checking the logic or filtering )----> Servlet )
+
+```
+
+# 3. Session ID 
+
+````markdown
+
+```
+
+````markdown
+
+```
+
+````markdown
+
+```
