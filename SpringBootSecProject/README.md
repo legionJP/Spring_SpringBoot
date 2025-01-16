@@ -134,7 +134,43 @@ server.servlet.session.cookie.same-stie=strict
 - #### 2.  [Disabling the CSRF Token](src/main/java/com/jspring6/springbootsecproject/config/SecurityConfig.java)
 
 
-```markdown
+# 6. Working With the Multiple Users
 
+- By default the spring security usages called the UserDetailsService to check for the applocation Properties for user and password 
+
+- Defining the Own User Details Service
+
+```java
+//    UserDetailService for the MultiUsers 
+        @Bean
+        public UserDetailsService userDetailsService()  // Spring will lookup for the obj serDetailsService to lookup the user data
+        {
+        //    UserDetails user = User.builder().build();
+             @SuppressWarnings("deprecation")
+            UserDetails user = User
+                    .withDefaultPasswordEncoder()  //defaultencoder
+                    .username("user")
+                    .password("super123")
+                    .roles("USER")
+                    .build();
+
+            @SuppressWarnings("deprecation")
+            UserDetails admin = User
+                .withDefaultPasswordEncoder()  //defaultencoder
+                .username("Tor")
+                .password("super123")
+                .roles("ADMIN")
+                .build();
+
+            return new InMemoryUserDetailsManager(user, admin);
+        }
+
+
+}
+```
+
+# 7 Creating the User Table and DB Properties 
+
+```markdown
 
 ```
