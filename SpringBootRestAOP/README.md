@@ -57,6 +57,13 @@ Spring AOP : A simpler, proxy-based framework that integrates with the Spring Fr
 
 # 1. Logging the Calls
 
+
+#### 2.Before Advice 
+
+- `Aspect` - LoggingAspect
+- `Advice` - @Before 
+
+
 ```java
 
 
@@ -70,9 +77,37 @@ public class LoggingAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
+
+// Before  Returning 
+
+// return type first , then class name full path, args  
+    // @Before("execution(* *.*(..))")   // all the return type , all the class * and .* all the methods , (..) args 
+    @Before("execution(* com.jspring6.springbootrestaop.service.JobService.*(..))")
     public void logMethodCall()
     {
         LOGGER.info("Method Called");
     }
 }
+```
+
+#### 2. Joint Point 
+
+- If you want to target a particular method and want to hold on it it is called thr Join Point 
+
+```java
+
+ @Before("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodCall(JoinPoint jp)
+    {
+        LOGGER.info("Method Called "+ jp.getSignature().getName());
+    }
+
+```
+
+### 3. After Advice 
+
+```java
+
+
+
 ```
