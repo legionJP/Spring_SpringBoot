@@ -104,13 +104,37 @@ public class HelloController {
     {
             return (CsrfToken) request.getAttribute("_csrf");
     }
+// TO send the post request add the csrf token in header with X-CSRF-TOKEN
+
 ```
 # 5.4 Same Site Strict CSRF
 
+- this will not allow the cross site access 
 ```markdown
-
+# application Properties : 
+server.servlet.session.cookie.same-stie=strict
 ```
 
+#### Making the Web Stateless
+- REST API :
+-  1. Stateful(using the same session id for the one login and subsequent req) 
+- 2. Stateless : in this we need to login with the user name and password  
+
+# 5.5 Security Configuration 
+- #### 1. [Specifying the Own Spring Security](src/main/java/com/jspring6/springbootsecproject/config/SecurityConfig.java)
+
+```java
+ @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
+    {  
+        return http.build();
+    }
+
+```
+- #### 2.  [Disabling the CSRF Token](src/main/java/com/jspring6/springbootsecproject/config/SecurityConfig.java)
+
+
 ```markdown
+
 
 ```
