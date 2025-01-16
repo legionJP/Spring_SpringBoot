@@ -53,14 +53,48 @@
 
 # 3. Session ID 
 
-````markdown
+```java
+
+@RestController
+public class HelloController {
+
+    @GetMapping("hello")
+    public String greeting(HttpServletRequest request) {
+        return "Hello World" +request.getSession().getId();
+    }
+
+    @GetMapping("about")
+    public String about(HttpServletRequest request)
+    {
+        return "About Page " + request.getSession().getId();
+    }
+```
+
+# 4. Getting  Custom User Name and Password
+- [Hardcoding the User and Password ](src/main/resources/application.properties)
+- can Send the Auth key value in the api client as well 
+
+# 5. CSRF : 
+
+# 5.1 CSRF Intro 
+
+- When the user go the malicious website the website try to store the session id of the secure website and and this is called the cross site request forgery.
+
+ - If every request is returning the token and next time when request is send need to submit the token as well 
+
+- By request the Spring sec will implement the CSRF for the Post Put Update and Delete
+
+
+# 5.2 Error Without CSRF Token 
+```markdown 
+
 
 ```
 
-````markdown
+```markdown
 
 ```
 
-````markdown
+```markdown
 
 ```
