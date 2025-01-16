@@ -72,7 +72,7 @@ public class HelloController {
 
 # 4. Getting  Custom User Name and Password
 - [Hardcoding the User and Password ](src/main/resources/application.properties)
-- can Send the Auth key value in the api client as well 
+- You can Send the Auth key value in the API client as well 
 
 # 5. CSRF : 
 
@@ -87,9 +87,25 @@ public class HelloController {
 
 # 5.2 Error Without CSRF Token 
 ```markdown 
-
-
+ {
+    "id": 1,
+    "name": "JP",
+    "tech": "Rust"
+  }
+   401 Unauthorize
 ```
+# 5.3 Sending the CSRF Token 
+
+```java
+// Getting the csrf-token by servlet 
+
+   @GetMapping("csrf-token") 
+    public CsrfToken getCsrfToken(HttpServletRequest request)
+    {
+            return (CsrfToken) request.getAttribute("_csrf");
+    }
+```
+# 5.4 Same Site Strict CSRF
 
 ```markdown
 
