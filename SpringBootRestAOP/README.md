@@ -109,5 +109,36 @@ public class LoggingAspect {
 ```java
 
 
+// After Advice (finally )
+
+    @After("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodExecution(JoinPoint jp)
+    {
+        LOGGER.info("Method Executed "+ jp.getSignature().getName());
+    }
+
+```
+
+- 2. // After Throwing (Only called when there is Exception )
+
+```java
+
+    @AfterThrowing("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodCrash(JoinPoint jp)
+    {
+        LOGGER.info("Method has some issue "+ jp.getSignature().getName());
+    }
+```
+
+- 3 .// After Returning (when there is no exceptions)
+
+```java
+
+    @AfterReturning("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodSuccess(JoinPoint jp)
+    {
+        LOGGER.info("Method successfully Executed "+ jp.getSignature().getName());
+    }
+
 
 ```

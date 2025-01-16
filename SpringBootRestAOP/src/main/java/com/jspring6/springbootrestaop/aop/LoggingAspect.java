@@ -1,5 +1,8 @@
 package com.jspring6.springbootrestaop.aop;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -30,11 +33,34 @@ public class LoggingAspect {
     @Before("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
     public void logMethodCall(JoinPoint jp)
     {
-        LOGGER.info("Method Called "+ jp.getSignature().getName());
+        LOGGER.info("Method Called  Before "+ jp.getSignature().getName());
     }
 
-// After Advice 
-        
+// After Advice (finally )
+
+    @After("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodExecution(JoinPoint jp)
+    {
+        LOGGER.info("Method Executed "+ jp.getSignature().getName());
+    }
+
+// After Throwing (Only called when there is Exception )
+
+    @AfterThrowing("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodCrash(JoinPoint jp)
+    {
+        LOGGER.info("Method has some issue "+ jp.getSignature().getName());
+    }
+
+// After Returning (when there is no exceptions)
+
+
+    @AfterReturning("execution(* com.jspring6.springbootrestaop.service.JobService.getJob(..)) || execution(* com.jspring6.springbootrestaop.service.JobService.load(..))")
+    public void logMethodSuccess(JoinPoint jp)
+    {
+        LOGGER.info("Method successfully Executed "+ jp.getSignature().getName());
+    }
+
 }
 
 
