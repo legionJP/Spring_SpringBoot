@@ -173,4 +173,13 @@ server.servlet.session.cookie.same-stie=strict
 
 ```markdown
 
+# To connect the database using the JPA , add the dependencies 
+- db driver
+- jpa dependencies
+
+# auth provider layer 
+
+- need to add the authentication provider : ---> Authentication Object 
+- auth provider will be connected to the db using the DAO (Data Access Object ) layer
+
 ```
