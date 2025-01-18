@@ -1,4 +1,4 @@
-package com.jspring6.springbootsecproject;
+package com.jspring6.springbootsecproject.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

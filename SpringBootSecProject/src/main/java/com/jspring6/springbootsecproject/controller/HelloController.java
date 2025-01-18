@@ -1,4 +1,4 @@
-package com.jspring6.springbootsecproject;
+package com.jspring6.springbootsecproject.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
