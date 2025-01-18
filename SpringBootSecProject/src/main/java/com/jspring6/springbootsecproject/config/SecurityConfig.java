@@ -3,12 +3,16 @@ package com.jspring6.springbootsecproject.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import static org.springframework.security.config.Customizer.withDefaults;
+
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -89,7 +93,19 @@ public class SecurityConfig {
             return new InMemoryUserDetailsManager(user, admin);
         }
 
+// Bean to 
+        private UserDetailsService userDetailsService;
 
+        @SuppressWarnings("deprecation")
+        @Bean
+        public AuthenticationProvider authProvider() // setuserDetailsService is dependent on the authprovider
+        {
+            DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+            provider.setUserDetailsService(userDetailsService);
+            // specify pass encoder
+            provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance()); // to use the password encoder replace it 
+            return provider;
+        }
 
 }
 

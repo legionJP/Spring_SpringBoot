@@ -183,3 +183,9 @@ server.servlet.session.cookie.same-stie=strict
 - auth provider will be connected to the db using the DAO (Data Access Object ) layer
 
 ```
+
+# 8. Authentication Provider 
+
+```markdown
+
+```
