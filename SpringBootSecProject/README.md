@@ -186,7 +186,11 @@ server.servlet.session.cookie.same-stie=strict
 
 # 8. Authentication Provider 
 
+- #### [Config Class](src/main/java/com/jspring6/springbootsecproject/config/SecurityConfig.java)
+
+- ####  User Details Service 
 ```java
+
 
 
 // Bean to 
@@ -204,3 +208,8 @@ server.servlet.session.cookie.same-stie=strict
         }
 
 ```
+# 9. Creatin User Repository using DAO
+
+- #### [user repo  class](src/main/java/com/jspring6/springbootsecproject/dao/UserRepo.java)
+
+# User Details and User Principal 
