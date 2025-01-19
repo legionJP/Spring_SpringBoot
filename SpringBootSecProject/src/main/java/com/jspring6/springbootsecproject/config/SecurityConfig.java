@@ -94,7 +94,7 @@ public class SecurityConfig {
         //     return new InMemoryUserDetailsManager(user, admin);
         // }
 
-// Bean to 
+// Bean to use the auth provider DAO
         @Autowired
         private UserDetailsService userDetailsService;
 
