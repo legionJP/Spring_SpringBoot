@@ -1,5 +1,7 @@
 package com.jspring6.springbootsecproject.service;
 
+// import java.nio.file.attribute.UserPrincipal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.jspring6.springbootsecproject.dao.UserRepo;
 import com.jspring6.springbootsecproject.model.User;
+import com.jspring6.springbootsecproject.model.UserPrincipal;
+
 
 @Service
 public class MyUserDetailsService  implements UserDetailsService{
@@ -21,10 +25,10 @@ public class MyUserDetailsService  implements UserDetailsService{
        if(user==null)
        {
         System.out.println("user 404");
-        throw new UsernameNotFoundException("404 user Not Found")
+        throw new UsernameNotFoundException("404 user Not Found");
        }
 
-        return User;
+        return new UserPrincipal(user);
     } 
      // pass this class object in te config userdeatils service obj 
     

@@ -208,8 +208,18 @@ server.servlet.session.cookie.same-stie=strict
         }
 
 ```
-# 9. Creatin User Repository using DAO
+# 9. Creating User Repository using DAO
 
 - #### [user repo  class](src/main/java/com/jspring6/springbootsecproject/dao/UserRepo.java)
 
-# User Details and User Principal 
+# User Details and User Principal
+
+- #### [User Principal](src/main/java/com/jspring6/springbootsecproject/model/UserPrincipal.java) 
+
+- #### [My User Details ](src/main/java/com/jspring6/springbootsecproject/service/MyUserDetailsService.java)
+
+```markdown
+
+- Authenticating the Current user in Spring Security called the User Principal 
+```
+# 10 . 

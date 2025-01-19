@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -70,30 +71,31 @@ public class SecurityConfig {
     }
 
 //    UserDetailService for the MultiUsers 
-        @Bean
-        public UserDetailsService userDetailsService()  // Spring will lookup for the obj serDetailsService to lookup the user data
-        {
-        //    UserDetails user = User.builder().build();
-             @SuppressWarnings("deprecation")
-            UserDetails user = User
-                    .withDefaultPasswordEncoder()  //defaultencoder
-                    .username("user")
-                    .password("super123")
-                    .roles("USER")
-                    .build();
+        // @Bean
+        // public UserDetailsService userDetailsService()  // Spring will lookup for the obj serDetailsService to lookup the user data
+        // {
+        // //    UserDetails user = User.builder().build();
+        //      @SuppressWarnings("deprecation")
+        //     UserDetails user = User
+        //             .withDefaultPasswordEncoder()  //defaultencoder
+        //             .username("user")
+        //             .password("super123")
+        //             .roles("USER")
+        //             .build();
 
-            @SuppressWarnings("deprecation")
-            UserDetails admin = User
-                .withDefaultPasswordEncoder()  //defaultencoder
-                .username("Tor")
-                .password("super123")
-                .roles("ADMIN")
-                .build();
+        //     @SuppressWarnings("deprecation")
+        //     UserDetails admin = User
+        //         .withDefaultPasswordEncoder()  //defaultencoder
+        //         .username("Tor")
+        //         .password("super123")
+        //         .roles("ADMIN")
+        //         .build();
 
-            return new InMemoryUserDetailsManager(user, admin);
-        }
+        //     return new InMemoryUserDetailsManager(user, admin);
+        // }
 
 // Bean to 
+        @Autowired
         private UserDetailsService userDetailsService;
 
         @SuppressWarnings("deprecation")
