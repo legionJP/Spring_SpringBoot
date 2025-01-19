@@ -19,6 +19,9 @@ to solve it be need to use the annotation as the @ResponseBody
 for the rest-controller what ever is returned treated as the body 
 ```
 
+```markdown
+- remove the config, MyUserDetailservice, UserService class.uerRrepo
+
 # Connecting the React and Spring to get Data
 
 ```java

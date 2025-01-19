@@ -79,4 +79,16 @@
 #
 ## 14 . Securing Spring App
 
-- #### []()
+- #### [Securing Job App](SpringJobProject/)
+
+## 14.1 Cross Origin 
+
+```markdown
+
+- for Cross origin backend run on the differnt origin or port number , and front-end on the different origin port.
+- can apply on the particular controller or can apply in the application properties for whole controller.
+
+# Dependency for the Sprig boot security 
+
+Changing the Configuration add the confif file 
+```
