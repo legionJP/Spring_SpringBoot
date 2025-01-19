@@ -239,3 +239,40 @@ server.servlet.session.cookie.same-stie=strict
 - [User Registration ](src/main/java/com/jspring6/springbootsecproject/controller/UserController.java)
 
 # 12. Bcrypt Encoding for User
+
+```java
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepo repo;
+    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+
+    public User saveUser(User user)
+    {
+        // setting the password with encoder
+        user.setPassword(encoder.encode(user.getPassword()));
+        
+        System.out.println(user.getPassword());
+        return  repo.save(user);  // using the Jpa
+    }
+}
+
+```
+# 13. Setting Password Encoder for authentication 
+
+```java
+
+ @Bean
+        public AuthenticationProvider authProvider() // setuserDetailsService is dependent on the authprovider
+        {
+            DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+            provider.setUserDetailsService(userDetailsService);
+            
+            provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
+
+            return provider;
+        }
+// same strength in the creation and authentication 
+```
