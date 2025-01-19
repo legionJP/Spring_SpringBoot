@@ -222,4 +222,20 @@ server.servlet.session.cookie.same-stie=strict
 
 - Authenticating the Current user in Spring Security called the User Principal 
 ```
-# 10 . 
+
+# 10 .  Bcrypt Intro
+
+```markdown
+
+- using the Hashing you will get one hash for every hashed data : md5 , sha256 
+
+- Can use the SHA256 for multiple times on the same data like 2^16 = times encrytion  
+
+- bcrypt is the cryptography algo for the encrypting the password 
+
+```
+
+# 11. User Registration Controller 
+- [User Registration ](src/main/java/com/jspring6/springbootsecproject/controller/UserController.java)
+
+# 12. Bcrypt Encoding for User

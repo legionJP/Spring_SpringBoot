@@ -29,6 +29,7 @@ public class UserPrincipal implements UserDetails  {
         return user.getUsername();
     }
 
+    // user principal means the current user
     // Also can implement the userExpired, locked enabled, methods as well 
 
 }
