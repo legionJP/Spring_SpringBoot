@@ -276,3 +276,10 @@ public class UserService {
         }
 // same strength in the creation and authentication 
 ```
+
+## 13.1 Cross Origin 
+
+```markdown
+
+- for Cross origin backend run on the differnt origin or port number , and front-end on the different origin port.
+- can apply on the particular controller or can apply in the application properties for whole controller.

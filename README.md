@@ -81,14 +81,26 @@
 
 - #### [Securing Job App](SpringJobProject/)
 
-## 14.1 Cross Origin 
-
-```markdown
-
-- for Cross origin backend run on the differnt origin or port number , and front-end on the different origin port.
-- can apply on the particular controller or can apply in the application properties for whole controller.
 
 # Dependency for the Sprig boot security 
 
-Changing the Configuration add the confif file 
+- Changing the Configuration add the confif file 
+
+
+#
+## 15.  JWT and OAuth2
+- ### []()
+
+# 15.1 Encryption and Decryption
+```markdown
+# Encryption : when sending the data using the key and convert it into cipher 
+# Decryption : 
+
+- Symmetric Key : Will have the same key to encrypt and decrypt
+
+- Asysmetric Key: where you have the piblic and private :
+when the data is encrypt using public key need the another private key to decrypt 
+
+- so when therer is multi user or client they encrypt the data using the public key shared b/w them 
 ```
+
