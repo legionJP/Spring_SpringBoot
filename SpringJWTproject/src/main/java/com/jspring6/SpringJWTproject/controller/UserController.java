@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jspring6.SpringJWTproject.model.User;
+import com.jspring6.SpringJWTproject.service.JwtService;
 import com.jspring6.SpringJWTproject.service.UserService;
 
 @RestController
@@ -19,6 +20,9 @@ public class UserController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtService jwtService;
 
     @PostMapping("/register")
     public User register(@RequestBody User user)
@@ -32,9 +36,19 @@ public class UserController {
         Authentication authentication = authenticationManager
                  .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
         
+        // if(authentication.isAuthenticated())
+        // {
+        //     return "User Logged In";
+        // }
+        // else
+        // {
+        //     return "Invalid Credentials";
+        // }
+// Generating the token 
+
         if(authentication.isAuthenticated())
         {
-            return "User Logged In";
+            return jwtService.generateToken(user.getUsername());
         }
         else
         {
