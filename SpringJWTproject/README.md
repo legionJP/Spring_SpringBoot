@@ -36,9 +36,10 @@ user and sencond key as digital signature
 
 # Scenario
 - When we need the pass which have the digital sign of the authority 
-- if the web is dynamic we nedd auth but when the server is stateless we need to use the session to verify 
-- user , like using the session_ID
-- if we have horizontal scalling server and it hsve the same db , or the load balancer send the particular user to destin server
+- if the web is dynamic we need auth. but when the server is stateless ,
+    we need to use the session to verify user , like using the session_ID
+- if we have horizontal scalling server and it hsve the same db,
+    or the load balancer send the particular user to destin server
 
 - But instead of doing above thing we can give the pass to client , a signed pass 
 like JSON Web Token (JWT) 
