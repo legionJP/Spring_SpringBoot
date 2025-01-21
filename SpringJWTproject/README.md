@@ -45,3 +45,26 @@ user and sencond key as digital signature
 like JSON Web Token (JWT) 
 
 ```
+# JWT Project Setup and Security and DB Config 
+
+```java
+ @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
+    {   
+       
+        http.csrf(customizer -> customizer.disable())
+             .authorizeHttpRequests(request -> request
+                    
+                    .requestMatchers("/register","/hello")
+                    .permitAll()
+                    .anyRequest().authenticated())
+             //.httpBasic(Customizer.withDefaults())
+            // .httpBasic(withDefaults())
+             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        
+        return  http.build();
+
+    }
+```
+
+# Custom Login 

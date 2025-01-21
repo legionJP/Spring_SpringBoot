@@ -23,19 +23,19 @@ public class StudentController {
 
 // Getting the csrf-token by servlet 
 
-   @GetMapping("csrf-token") 
+   @GetMapping("/csrf-token") 
     public CsrfToken getCsrfToken(HttpServletRequest request)
     {
             return (CsrfToken) request.getAttribute("_csrf");
     }
 
-    @GetMapping("students")
+    @GetMapping("/students")
     public List<Student> getStudents(){
         return students;
     }
     
 // Adding the Students
-    @PostMapping("students")
+    @PostMapping("/students")
     public void addStudents(@RequestBody Student student)
     {
         students.add(student);
