@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -29,7 +31,7 @@ public class SecurityConfig {
         http.csrf(customizer -> customizer.disable())
              .authorizeHttpRequests(request -> request
                     
-                    .requestMatchers("/register","/hello")
+                    .requestMatchers("/register","/hello","/login")
                     .permitAll()
                     .anyRequest().authenticated())
              //.httpBasic(Customizer.withDefaults())
@@ -56,6 +58,13 @@ public class SecurityConfig {
 
             return provider;
         }
+
+        // bean to get the hold of authentication manager
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception
+    {
+        return config.getAuthenticationManager();
+    }
 
 }
 

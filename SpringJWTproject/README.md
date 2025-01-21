@@ -68,3 +68,24 @@ like JSON Web Token (JWT)
 ```
 
 # Custom Login 
+    - [Login Controller](src/main/java/com/jspring6/SpringJWTproject/controller/UserController.java)
+
+```java
+ @PostMapping("/login")
+    public String login(@RequestBody User user)
+    {
+        Authentication authentication = authenticationManager
+                 .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        
+        if(authentication.isAuthenticated())
+        {
+            return "User Logged In";
+        }
+        else
+        {
+            return "Invalid Credentials";
+        }
+    }
+```
+# Generating Token 
+
