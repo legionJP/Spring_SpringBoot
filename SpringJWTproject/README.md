@@ -24,7 +24,7 @@ Algos : RSA, ECDSA
 - To verify the right owner we use the Digital Signature ,
 - We have to encrypt the msg using the own pvt key , and to decrypt we have to share the public key.
 
-# But in this process their is no security any one can read the data using the public key sender 
+# But in this process there is no security any one can read the data using the public key sender 
 
 # To prevent the sec issue we can use the double encryption 1st encryption using the pub key of the 
 user and sencond key as digital signature 
