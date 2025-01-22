@@ -12,6 +12,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.management.RuntimeErrorException;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Jwts;
@@ -70,6 +71,15 @@ public class JwtService { // it should have the header payload ..as token
     {   
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);  // ask for the secret key message as bytestream 
+    }
+
+    public String extractUserName(String token) {
+       return "";
+    }
+
+    public boolean validateToken(String token, UserDetails userDetails) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'validateToken'");
     }
                    
 }

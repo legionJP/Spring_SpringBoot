@@ -138,4 +138,10 @@ like JSON Web Token (JWT)
         return  http.build();
 ```
 
-# Verifying the JWT token 
+# Setting Auth Token in Security Context 
+- #### [jwtFilter](src/main/java/com/jspring6/SpringJWTproject/config/JwtFilter.java)
+
+- #### [Implementing OncePerRequestFilter](src/main/java/com/jspring6/SpringJWTproject/config/JwtFilter.java)
+
+
+# Validating the JWT token 
