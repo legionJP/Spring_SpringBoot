@@ -1,5 +1,4 @@
 package com.jspring6.OAuth2Project;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
