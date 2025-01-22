@@ -98,3 +98,44 @@ like JSON Web Token (JWT)
         return Keys.hmacShaKeyFor(keyBytes);  // ask for the secret key message as bytestream 
     }
 ```
+
+# Creating JWT Filter 
+
+- when request is send the spring sec verify the credential using the username passwrd authentication 
+
+- We can use own custom method to check the credential usinng the filter 
+- as tomcat is servlet container --> sevlet is responsible to accept the user http request 
+- Http request and Http Response 
+
+- We can add the filter b/w the servlet and Servlet container when using the http req or response 
+- In filter we can modify the request data 
+- there can be multiple filter 
+- There is already inbuilt filter in spring sec. like UsernamePassword Filter 
+- we can add one more filter b/w jwtFilter 
+- can add filter before or filter after 
+
+### [JwtFilter](src/main/java/com/jspring6/SpringJWTproject/config/JwtFilter.java)
+
+### Adding the filter in Filter Chain: 
+```java
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
+    {   
+       
+        http.csrf(customizer -> customizer.disable())
+             .authorizeHttpRequests(request -> request
+                    
+                    .requestMatchers("/register","/login")
+                    .permitAll()
+                    .anyRequest().authenticated())
+             //.httpBasic(Customizer.withDefaults())
+            // .httpBasic(withDefaults())
+             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
+            // adding the Jwt filter 
+        return  http.build();
+```
+
+# Verifying the JWT token 
