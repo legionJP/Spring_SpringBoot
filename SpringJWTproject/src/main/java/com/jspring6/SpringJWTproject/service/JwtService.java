@@ -7,14 +7,15 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import javax.management.RuntimeErrorException;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -63,7 +64,7 @@ public class JwtService { // it should have the header payload ..as token
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000*60*3))
-                .signWith(getKey(), SignatureAlgorithm.HS256).compact();
+                .signWith(getKey(), SignatureAlgorithm.HS256).compact(); //hmacsha256 algo
                                 
                 
     }
@@ -72,14 +73,40 @@ public class JwtService { // it should have the header payload ..as token
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);  // ask for the secret key message as bytestream 
     }
+// Extracting the Username , claims  and expiration from the token
 
-    public String extractUserName(String token) {
-       return "";
-    }
+    public String extractUserName(String token) {  //extract the username from token 
+       return extractClaim(token, Claims::getSubject);
+           }
+    
+    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+                 final Claims claims = extractAllClaims(token);
+                return claimsResolver.apply(claims);
+            }
+                        
+    private Claims extractAllClaims(String token) {
+                return Jwts.parserBuilder()
+                        .setSigningKey(getKey())
+                        .build().parseClaimsJws(token).getBody();
 
+            }
+     
+    // Validating the token
     public boolean validateToken(String token, UserDetails userDetails) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'validateToken'");
+                final String userName = extractUserName(token);
+                return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
+                    }
+                
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+            }
+        
+    private Date extractExpiration(String token) {
+               return extractClaim(token, Claims::getExpiration);
     }
+
                    
 }
+
+// whatever username we are getting from a token , we have to verify it from database.
+// username is pssing as a subject to validate the token.
