@@ -27,7 +27,3 @@ public class SecurityConfig {
 ```
 
 - ### 2. [GitHub OAuth2 Configuration](src/main/resources/application.properties)
-
-```java
-
-```
