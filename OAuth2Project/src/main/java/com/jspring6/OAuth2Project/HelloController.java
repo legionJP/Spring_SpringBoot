@@ -11,4 +11,10 @@ public class HelloController {
     {
         return "Welcome to O-Auth2";
     }
+
+    // @GetMapping("/login")
+    // public String login()
+    // {
+    //     return "login";
+    // }
 }
