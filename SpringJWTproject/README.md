@@ -87,7 +87,14 @@ like JSON Web Token (JWT)
         }
     }
 ```
-# Generating Token 
+# Generating Token using the Secret Key
 
-- [Token Generation](src/main/java/com/jspring6/SpringJWTproject/service/JwtService.java)
+#### - [Token Generation](src/main/java/com/jspring6/SpringJWTproject/service/JwtService.java)
 
+```java
+ private Key getKey()
+    {   
+        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+        return Keys.hmacShaKeyFor(keyBytes);  // ask for the secret key message as bytestream 
+    }
+```
