@@ -149,8 +149,3 @@ like JSON Web Token (JWT)
 - ### [JWT Fiter ](src/main/java/com/jspring6/SpringJWTproject/config/JwtFilter.java)
 
 - ### [ JWT Service ](src/main/java/com/jspring6/SpringJWTproject/service/JwtService.java)
-
-
-# Implementing OAuth2
-
-- ### [Auth2 Configurattion]()

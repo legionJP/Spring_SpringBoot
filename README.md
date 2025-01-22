@@ -90,3 +90,19 @@
 #
 ## 15.  JWT and OAuth2
 - ### [Spring JWT and Oauth Project](SpringJWTproject/)
+
+#
+## 15.2 OAuth2 
+-   ### [OAuth 2 Project](OAuth2Project/)
+
+# Implementing OAuth2
+- ### [OAuth2 Project ]()
+
+- ### [Auth2 Configurattion]()
+
+```markdown
+
+- using the OAuth2 via Google O-auth2 and Github OAuth2
+- third party will access info from google about users to the servers
+
+```
