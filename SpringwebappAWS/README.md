@@ -29,7 +29,7 @@
 
 # Managing IAM Account : 
     - Create the User Group 
-    - 
+    - add the user in the user group
 
 # Packaging the Jar file
 ```xml     
@@ -44,3 +44,12 @@
 		</plugins>
 	</build>
 ```
+
+# Deploying on the AWS BeanStalk
+
+- Create the  role for EC2_Javaapp 
+- add the Policies for beanstalk , awabeanstalksns , Admininstrator access , beanstalkwebtier, worker tier , waselasticBeanstalk
+
+- Create the application in the AWSElasticBeanStalk , select java for jar and upload the jar file 
+
+# 
