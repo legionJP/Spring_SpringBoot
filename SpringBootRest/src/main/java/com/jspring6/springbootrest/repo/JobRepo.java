@@ -1,10 +1,10 @@
 package com.jspring6.springbootrest.repo;
-import com.jspring6.springbootrest.model.JobPost;
-import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.*;
 import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.jspring6.springbootrest.model.JobPost;
 
 
 @Repository

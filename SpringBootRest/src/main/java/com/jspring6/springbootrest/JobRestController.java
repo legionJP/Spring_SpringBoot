@@ -102,7 +102,7 @@ public class JobRestController {
 
     @Autowired
     private UserService userService;
-    
+
 // registering the user 
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {

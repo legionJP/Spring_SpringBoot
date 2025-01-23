@@ -62,4 +62,63 @@
 
 # Introduction to ECS :
 
+	- ECS (Elastic Container Services)
+	- Nedd to run two container for the Postgres and App 
+	- these container will be running inside the cluster 
+	- two images for postgres on  docker hub and image of the app
+
+	- As Postgres on the docker hub already , But the app image we have to put it on the ECR: Elastic Container Registory
+	- So need to put the images on the ECR and then pull them into the ECS and then run it there 
+	- Also Need the AWS CLI --> to push the image from local machine to ecr we need the aws-cli 
+
+	- So First have the CLI , and push image to ECR then get the ECS 
+
+# Configuring the AWS CLI
+
+	- Install the AWS-CLI from aws web.
+	- create the aws configure , to see "aws iam list-users" or redirect the ouput in file in window : >output.txt
+	-
+# Creating the Cluster and ECR 
+	- go to ECS create the cluster and give the cluster name 
+	- choose the infrastructure : 1. AWS - fargate(serverless) 2. or EC2 3. or external instance 
+	- then  run  the task for the cluster 
 	- 
+
+# 1 Creating the task defination 
+
+-	### Container - 1 Info
+
+- Specify a name, container image, and whether the container should be marked as essential. Each task definition must have at least one essential container.
+```markdown
+Name                 Image URI				Essential container
+postgres-container   postgres:latest			Yes
+```
+- ### Port mappings
+- 1. for http port on 80
+- 2. for postgres port : 5432
+
+### Environment variables - optional
+
+```markdown
+- the container of db  need 3 thins as environment variable 
+- DB
+- Username
+- Password 
+```
+# Example
+| Key               | Value Type | Value    |
+|-------------------|------------|----------|
+| POSTGRES_DB       | Value      | jspring6 |
+| POSTGRES_USER     | Value      | postgres |
+| POSTGRES_PASSWORD | Value      | password |
+
+# 3. Running the Task for Postgres container in cluster 
+	- go to run task 
+	- select the launch type 
+	- select task family 
+	- can create the new securty group while selcting the vpc 
+	- allow all traffic on the source from 	anywhere or required one 
+	- turn on public ip 
+	- Noe connect the running taks 52.11.22.33 with the public IP on your local machine postgres server to test 
+
+# Now add the docker file for the jdk , and 
