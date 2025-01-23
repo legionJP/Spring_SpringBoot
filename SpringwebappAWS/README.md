@@ -59,8 +59,9 @@
 - Connect the DB server in the local machine using the postgres pgadmin or cli , for connection use endpoint of rds aws 
 - modify the security group for the inbound rule to accept the tcp traffic on port 5432 
 
+# Deploying App , DB On ECS 
 
-# Introduction to ECS :
+## Introduction to ECS :
 
 	- ECS (Elastic Container Services)
 	- Nedd to run two container for the Postgres and App 
@@ -121,4 +122,24 @@ postgres-container   postgres:latest			Yes
 	- turn on public ip 
 	- Noe connect the running taks 52.11.22.33 with the public IP on your local machine postgres server to test 
 
-# Now add the docker file for the jdk , and 
+# Using the [Spring Rest APP](/SpringBootRest/)
+
+# Now add the docker file for the jdk from amazon corretto
+  -  [docker file](/SpringBootRest/Dockerfile)
+
+- now use mvn package for the jar file 
+
+# Create Repository by  ECR 
+	- create ne private repository 
+	- click view push commands and use the aws-cli command 
+	- go to the project dir 
+	- put the cli command for authentication 
+	- put the build Docker image command in cmd, then docker tag and than docker push command 
+	- using these command the image will be on ECR
+
+# Running the java App task
+	- create the new task in  the cluster , ECS
+	- but 1st create the task defination , and paste the image-uri from the ECR 
+	- now create the task for the job app 
+	- specify rules and source , turn on public ip 
+so now two task is running on the same cluster , db and app 
