@@ -52,4 +52,14 @@
 
 - Create the application in the AWSElasticBeanStalk , select java for jar and upload the jar file 
 
-# 
+# Spring Proj With DB+
+
+### Using AWS RDS : 
+- #### Create RDS Database	with the DB identifier as name select engine 
+- Connect the DB server in the local machine using the postgres pgadmin or cli , for connection use endpoint of rds aws 
+- modify the security group for the inbound rule to accept the tcp traffic on port 5432 
+
+
+# Introduction to ECS :
+
+	- 
